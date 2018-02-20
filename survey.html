@@ -1032,7 +1032,7 @@ survey.onComplete.add(function(result) {
     console.log(result.data);
     var surveyTotal = 0;
     for (var i in result.data) {
-      surveyTotal += result.data[i];
+      surveyTotal += parseInt(result.data[i]);;
     }
     console.log(surveyTotal);
     if(surveyTotal > 0 && surveyTotal < 30) {
