@@ -10,7 +10,7 @@
     <body>
         
 		<div id="surveyContainer"></div>
-        <div id="surveyResult"></div>
+        <div id="surveyResult" class="sv_body sv_completed_page"></div>
 <script>
     
 var surveyJSON = {
@@ -1035,21 +1035,21 @@ survey.onComplete.add(function(result) {
       surveyTotal += result.data[i];
     }
     if(surveyTotal > 0 && surveyTotal < 30) {
-        document.querySelector("#surveyResult").innerHTML =
-        "You may have a great idea, but you need a bit more time assessing the practicalities of starting your business. Try further developing your business plan or working with a mentor to assess the areas where you scored lowest. ";
+        document.querySelector("#surveyResult").innerHTML = "Your result is " + surveyTotal +
+        "<h3> You may have a great idea, but you need a bit more time assessing the practicalities of starting your business. Try further developing your business plan or working with a mentor to assess the areas where you scored lowest.<h3>";
     }
     else if(surveyTotal > 30 && surveyTotal < 60) {
-        document.querySelector("#surveyResult").innerHTML =
-        "You have a grasp of the requirements for your new venture but are running a fair bit of risk if you launch now - you may be facing a weak market or low return on your idea.  ";
+        document.querySelector("#surveyResult").innerHTML = "Your result is " + surveyTotal +
+        "<h3> You have a grasp of the requirements for your new venture but are running a fair bit of risk if you launch now - you may be facing a weak market or low return on your idea.<h3>";
     }
     else if(surveyTotal > 60 && surveyTotal < 90) {
-        document.querySelector("#surveyResult").innerHTML =
-        "You have a solid business idea but may need to do a bit more refining on your logistics, market readiness and capacity before you're ready to launch. ";
+        document.querySelector("#surveyResult").innerHTML = "Your result is " + surveyTotal +
+        "<h3> You have a solid business idea but may need to do a bit more refining on your logistics, market readiness and capacity before you're ready to launch.<h3>";
     }
     else 
     {
-       document.querySelector("#surveyResult").innerHTML =
-       "You're on solid ground with your planning! You may want to isolate the area where your scores were slightly low (i.e., sales or operations) and put a bit more planning time into that area.  "; 
+       document.querySelector("#surveyResult").innerHTML = "Your result is " + surveyTotal +
+       "<h3> You're on solid ground with your planning! You may want to isolate the area where your scores were slightly low (i.e., sales or operations) and put a bit more planning time into that area.<h3>"; 
     }
   });
 $("#surveyContainer").Survey({
