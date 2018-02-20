@@ -1034,15 +1034,15 @@ survey.onComplete.add(function(result) {
     for (var i in result.data) {
       surveyTotal += result.data[i];
     }
-    if(surveyTotal < 30) {
+    if(surveyTotal > 0 && surveyTotal < 30) {
         document.querySelector("#surveyResult").innerHTML =
         "You may have a great idea, but you need a bit more time assessing the practicalities of starting your business. Try further developing your business plan or working with a mentor to assess the areas where you scored lowest. ";
     }
-    else if(surveyTotal < 60) {
+    else if(surveyTotal > 30 && surveyTotal < 60) {
         document.querySelector("#surveyResult").innerHTML =
         "You have a grasp of the requirements for your new venture but are running a fair bit of risk if you launch now - you may be facing a weak market or low return on your idea.  ";
     }
-    else if(surveyTotal < 90) {
+    else if(surveyTotal > 60 && surveyTotal < 90) {
         document.querySelector("#surveyResult").innerHTML =
         "You have a solid business idea but may need to do a bit more refining on your logistics, market readiness and capacity before you're ready to launch. ";
     }
