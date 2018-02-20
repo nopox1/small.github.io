@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Survey</title>
+        <script src="https://unpkg.com/jquery"></script>
+		<link href="https://surveyjs.azureedge.net/1.0.9/survey.css" type="text/css" rel="stylesheet" />
+		<script src="https://surveyjs.azureedge.net/1.0.9/survey.jquery.min.js"></script>
+
+    </head>
+    <body>
+        
+		<div id="surveyContainer"></div>
+        <div id="surveyResult"></div>
+<script>
+    
+var surveyJSON = {
+ locale: "en",
+ title: "CULTURAL ECONOMIC DRIVER IDEA EVALUATION",
+ pages: [
+  {
+   name: "OPPORTUNITY",
+   elements: [
+    {
+     type: "panel",
+     name: "OPPORTUNITY_panel",
+     elements: [
+      {
+       type: "radiogroup",
+       name: "Q1",
+       title: {
+        en: "What is a local cultural story you are telling through your business? "
+       },
+       choices: [
+        {
+         value: "4",
+         text: {
+          en: "Connection to the land/using local resources "
+         }
+        },
+        {
+         value: "4",
+         text: {
+          en: "Connected to local heritage/reuse of existing assets "
+         }
+        },
+        {
+         value: "3",
+         text: {
+          en: "Connected to other local businesses "
+         }
+        },
+        {
+         value: "1",
+         text: {
+          en: "There is no strong local narrative "
+         }
+        }
+       ]
+      },
+      {
+       type: "radiogroup",
+       name: "Q2",
+       title: {
+        en: "What is your main reason for starting a business?"
+       },
+       choices: [
+        {
+         value: "4",
+         text: {
+          en: "Commitment to building/supporting the community"
+         }
+        },
+        {
+         value: "3",
+         text: {
+          en: "Gap in the market/unique idea "
+         }
+        },
+        {
+         value: "2",
+         text: {
+          en: "Profitability"
+         }
+        },
+        {
+         value: "1",
+         text: {
+          en: "Industry Experience"
+         }
+        }
+       ]
+      }
+     ],
+     title: {
+      en: "OPPORTUNITY"
+     }
+    }
+   ]
+  },
+  {
+   name: "MARKET",
+   elements: [
+    {
+     type: "panel",
+     name: "MarketPanel",
+     elements: [
+      {
+       type: "radiogroup",
+       name: "Q3",
+       title: "What is the size of the market you are targeting?",
+       choices: [
+        {
+         value: "1",
+         text: "Under $100,000 "
+        },
+        {
+         value: "2",
+         text: "$100,000 - $250,000 under"
+        },
+        {
+         value: "3",
+         text: "$250,000 - $500,000 under "
+        },
+        {
+         value: "4",
+         text: " $500,000 and above "
+        }
+       ]
+      },
+      {
+       type: "radiogroup",
+       name: "Q4",
+       title: "How much market share do you expect to acquire?",
+       choices: [
+        {
+         value: "1",
+         text: "Less than 5% "
+        },
+        {
+         value: "2",
+         text: "5% to Less than 10%"
+        },
+        {
+         value: "3",
+         text: "10% to less than 25% "
+        },
+        {
+         value: "4",
+         text: "25% and above "
+        }
+       ]
+      },
+      {
+       type: "radiogroup",
+       name: "Q5",
+       title: "Where are your customers?",
+       choices: [
+        {
+         value: "3",
+         text: " \tLocal"
+        },
+        {
+         value: "3",
+         text: " \tRegional "
+        },
+        {
+         value: "1",
+         text: " \tTourists "
+        },
+        {
+         value: "4",
+         text: " \tCombination "
+        },
+        {
+         value: "2",
+         text: " \tInternational "
+        }
+       ]
+      },
+      {
+       type: "radiogroup",
+       name: "Q6",
+       title: "What is the predicted growth in your industry?",
+       choices: [
+        {
+         value: "2",
+         text: "Low"
+        },
+        {
+         value: "3",
+         text: "Medium "
+        },
+        {
+         value: "4",
+         text: "High "
+        },
+        {
+         value: "0",
+         text: "Unknown "
+        }
+       ]
+      },
+      {
+       type: "radiogroup",
+       name: "Q7",
+       title: "Will your product/service be utilized?",
+       choices: [
+        {
+         value: "2",
+         text: "Seasonally "
+        },
+        {
+         value: "4",
+         text: "Year round "
+        }
+       ]
+      },
+      {
+       type: "radiogroup",
+       name: "Q8",
+       title: "Is your business idea a ________________?",
+       choices: [
+        {
+         value: "2",
+         text: "Fad (short-term) "
+        },
+        {
+         value: "4",
+         text: "Trend (long-term) "
+        },
+        {
+         value: "4",
+         text: "Necessity (4)"
+        }
+       ]
+      },
+      {
+       type: "radiogroup",
+       name: "Q9",
+       title: "Have you market-tested your product/service?\t",
+       choices: [
+        {
+         value: "4",
+         text: " Definitely yes "
+        },
+        {
+         value: "4",
+         text: " Probably yes "
+        },
+        {
+         value: "1",
+         text: " Might or might not "
+        },
+        {
+         value: "0",
+         text: " Probably not "
+        },
+        {
+         value: "0",
+         text: " Definitely not "
+        }
+       ]
+      },
+      {
+       type: "radiogroup",
+       name: "Q10",
+       title: {
+        en: "What are the barriers to market entry?"
+       },
+       choices: [
+        {
+         value: "1",
+         text: {
+          en: " High start-up cost "
+         }
+        },
+        {
+         value: "2",
+         text: {
+          en: " Customer loyalty "
+         }
+        },
+        {
+         value: "1",
+         text: {
+          en: " Patents "
+         }
+        },
+        {
+         value: "4",
+         text: {
+          en: " None "
+         }
+        }
+       ]
+      },
+      {
+       type: "radiogroup",
+       name: "Q11",
+       title: {
+        en: "Number of direct competitors?"
+       },
+       choices: [
+        {
+         value: "4",
+         text: {
+          en: "None "
+         }
+        },
+        {
+         value: "3",
+         text: {
+          en: "1 - Under 5 "
+         }
+        },
+        {
+         value: "2",
+         text: {
+          en: "5 - Under 10 "
+         }
+        },
+        {
+         value: "1",
+         text: {
+          en: "10 and above "
+         }
+        }
+       ]
+      }
+     ],
+     title: "MARKET"
+    }
+   ]
+  },
+  {
+   name: "SALES",
+   elements: [
+    {
+     type: "panel",
+     name: "SalesPanel",
+     elements: [
+      {
+       type: "radiogroup",
+       name: "Q12",
+       title: {
+        en: "How do you plan to reach your customers?"
+       },
+       choices: [
+        {
+         value: "3",
+         text: {
+          en: "Retail stores "
+         }
+        },
+        {
+         value: "3",
+         text: {
+          en: "Online "
+         }
+        },
+        {
+         value: "1",
+         text: {
+          en: "Door - to - door"
+         }
+        },
+        {
+         value: "4",
+         text: {
+          en: "Combination "
+         }
+        }
+       ]
+      },
+      {
+       type: "radiogroup",
+       name: "Q13",
+       title: {
+        en: "What is the frequency of purchase of your product/service?"
+       },
+       choices: [
+        {
+         value: "4",
+         text: {
+          en: "Frequently "
+         }
+        },
+        {
+         value: "1",
+         text: {
+          en: "Rarely "
+         }
+        },
+        {
+         value: "2",
+         text: {
+          en: "Sometimes "
+         }
+        },
+        {
+         value: "0",
+         text: {
+          en: "Unknown "
+         }
+        }
+       ]
+      },
+      {
+       type: "radiogroup",
+       name: "Q14",
+       title: {
+        en: "Why would customers buy from you?"
+       },
+       choices: [
+        {
+         value: "2",
+         text: {
+          en: "Price factor "
+         }
+        },
+        {
+         value: "2",
+         text: {
+          en: "Convenience factor (2)"
+         }
+        },
+        {
+         value: "2",
+         text: {
+          en: "Product/service quality "
+         }
+        },
+        {
+         value: "3",
+         text: {
+          en: "Combination "
+         }
+        },
+        {
+         value: "4",
+         text: {
+          en: "Only product/service provider "
+         }
+        }
+       ]
+      },
+      {
+       type: "radiogroup",
+       name: "Q15",
+       title: {
+        en: "Are your idea and its value easily communicated and understood?"
+       },
+       choices: [
+        {
+         value: "4",
+         text: {
+          en: "Definitely yes "
+         }
+        },
+        {
+         value: "2",
+         text: {
+          en: "Probably yes "
+         }
+        },
+        {
+         value: "1",
+         text: {
+          en: "Might or might not "
+         }
+        },
+        {
+         value: "0",
+         text: {
+          en: "Probably not "
+         }
+        }
+       ]
+      }
+     ],
+     title: {
+      en: "SALES"
+     }
+    }
+   ]
+  },
+  {
+   name: "FINANCE",
+   elements: [
+    {
+     type: "panel",
+     name: "FinancePanel",
+     elements: [
+      {
+       type: "radiogroup",
+       name: "Q16",
+       title: {
+        en: "How much do you need to raise to launch the business?"
+       },
+       choices: [
+        {
+         value: "4",
+         text: {
+          en: "Under $25,000 "
+         }
+        },
+        {
+         value: "3",
+         text: {
+          en: "$25,000 - Under $60,000 "
+         }
+        },
+        {
+         value: "2",
+         text: {
+          en: "$60,000 - Under $100,000 "
+         }
+        },
+        {
+         value: "1",
+         text: {
+          en: "Above $100,000 "
+         }
+        }
+       ]
+      },
+      {
+       type: "radiogroup",
+       name: "Q17",
+       title: {
+        en: "What is the expected payback period?"
+       },
+       choices: [
+        {
+         value: "4",
+         text: {
+          en: "Less than 2 years "
+         }
+        },
+        {
+         value: "3",
+         text: {
+          en: "2 - less than 4 years "
+         }
+        },
+        {
+         value: "2",
+         text: {
+          en: "4 - less than 6 years "
+         }
+        },
+        {
+         value: "1",
+         text: {
+          en: "6 years and more "
+         }
+        }
+       ]
+      },
+      {
+       type: "radiogroup",
+       name: "Q18",
+       title: {
+        en: "Expected net profit margin? "
+       },
+       choices: [
+        {
+         value: "1",
+         text: {
+          en: "0-5% "
+         }
+        },
+        {
+         value: "2",
+         text: {
+          en: "5-10% "
+         }
+        },
+        {
+         value: "3",
+         text: {
+          en: "10-15% (3)"
+         }
+        },
+        {
+         value: "4",
+         text: {
+          en: "More than 15% "
+         }
+        }
+       ]
+      },
+      {
+       type: "radiogroup",
+       name: "Q19",
+       title: {
+        en: "Are government grants available? "
+       },
+       choices: [
+        {
+         value: "4",
+         text: {
+          en: " \tDefinitely yes "
+         }
+        },
+        {
+         value: "2",
+         text: {
+          en: " \tProbably yes "
+         }
+        },
+        {
+         value: "1",
+         text: {
+          en: " \tMight or might not ("
+         }
+        },
+        {
+         value: "0",
+         text: {
+          en: " \tProbably not "
+         }
+        },
+        {
+         value: "0",
+         text: {
+          en: " \tDefinitely not "
+         }
+        }
+       ]
+      },
+      {
+       type: "radiogroup",
+       name: "Q20",
+       title: {
+        en: "Does your idea require significant marketing funds? (Will most of your profits be utilized in promoting the product/service?)"
+       },
+       choices: [
+        {
+         value: "0",
+         text: {
+          en: " Definitely yes "
+         }
+        },
+        {
+         value: "0",
+         text: {
+          en: "Probably yes "
+         }
+        },
+        {
+         value: "1",
+         text: {
+          en: "Might or might not "
+         }
+        },
+        {
+         value: "2",
+         text: {
+          en: "Probably not "
+         }
+        },
+        {
+         value: "4",
+         text: {
+          en: "Definitely not "
+         }
+        }
+       ]
+      },
+      {
+       type: "radiogroup",
+       name: "Q21",
+       title: {
+        en: "Do you have more than one revenue stream to support your business?"
+       },
+       choices: [
+        {
+         value: "4",
+         text: {
+          en: "Yes"
+         }
+        },
+        {
+         value: "2",
+         text: {
+          en: "Maybe"
+         }
+        },
+        {
+         value: "1",
+         text: {
+          en: "No"
+         }
+        }
+       ]
+      }
+     ],
+     title: {
+      en: "FINANCE"
+     }
+    }
+   ]
+  },
+  {
+   name: "OPERATIONS",
+   elements: [
+    {
+     type: "panel",
+     name: "OperationsPanel",
+     elements: [
+      {
+       type: "radiogroup",
+       name: "Q22",
+       title: {
+        en: "Have you taken steps to protect your intellectual property?  "
+       },
+       choices: [
+        {
+         value: "4",
+         text: {
+          en: "Yes"
+         }
+        },
+        {
+         value: "0",
+         text: {
+          en: "No"
+         }
+        }
+       ]
+      },
+      {
+       type: "radiogroup",
+       name: "Q23",
+       title: {
+        en: "Have you developed a risk management plan?"
+       },
+       choices: [
+        {
+         value: "4",
+         text: {
+          en: "Definitely yes"
+         }
+        },
+        {
+         value: "2",
+         text: {
+          en: "Probably yes "
+         }
+        },
+        {
+         value: "0",
+         text: {
+          en: "Probably not "
+         }
+        },
+        {
+         value: "0",
+         text: {
+          en: "Definitely not "
+         }
+        }
+       ]
+      },
+      {
+       type: "radiogroup",
+       name: "Q25",
+       title: {
+        en: "What are your success measurement criteria? "
+       },
+       choices: [
+        {
+         value: "4",
+         text: {
+          en: "Sales revenue "
+         }
+        },
+        {
+         value: "4",
+         text: {
+          en: "Operating productivity "
+         }
+        },
+        {
+         value: "4",
+         text: {
+          en: "Customer loyalty and retention "
+         }
+        },
+        {
+         value: "4",
+         text: {
+          en: "Corporate image "
+         }
+        },
+        {
+         value: "4",
+         text: {
+          en: "Market share "
+         }
+        }
+       ]
+      },
+      {
+       type: "radiogroup",
+       name: "Q25",
+       title: {
+        en: "How do you plan to stay competitive?"
+       },
+       choices: [
+        {
+         value: "4",
+         text: {
+          en: "Differentiate "
+         }
+        },
+        {
+         value: "4",
+         text: {
+          en: "Innovate "
+         }
+        },
+        {
+         value: "3",
+         text: {
+          en: "Enhance brand value/image "
+         }
+        },
+        {
+         value: "3",
+         text: {
+          en: "Target new markets "
+         }
+        }
+       ]
+      },
+      {
+       type: "radiogroup",
+       name: "Q26",
+       title: {
+        en: "How regulated is your business idea/ product/ service?"
+       },
+       choices: [
+        {
+         value: "1",
+         text: {
+          en: "Heavily "
+         }
+        },
+        {
+         value: "2",
+         text: {
+          en: "Moderately "
+         }
+        },
+        {
+         value: "3",
+         text: {
+          en: "Low "
+         }
+        },
+        {
+         value: "4",
+         text: {
+          en: "Negligible "
+         }
+        }
+       ]
+      },
+      {
+       type: "radiogroup",
+       name: "Q27",
+       title: {
+        en: "What is the exit plan for the business? "
+       },
+       choices: [
+        {
+         value: "1",
+         text: {
+          en: "Business closure "
+         }
+        },
+        {
+         value: "4",
+         text: {
+          en: "Merger "
+         }
+        },
+        {
+         value: "3",
+         text: {
+          en: "Business sellout "
+         }
+        },
+        {
+         value: "0",
+         text: {
+          en: "No plans "
+         }
+        }
+       ]
+      },
+      {
+       type: "radiogroup",
+       name: "Q28",
+       title: {
+        en: "Will the identified business location be a quality site for the future (including transportation, utilities and infrastructure)?"
+       },
+       choices: [
+        {
+         value: "1",
+         text: {
+          en: "1 - 5 years "
+         }
+        },
+        {
+         value: "2",
+         text: {
+          en: "Up to 10 years "
+         }
+        },
+        {
+         value: "3",
+         text: {
+          en: "Up to 25 years "
+         }
+        },
+        {
+         value: "4",
+         text: {
+          en: "More than 25 years "
+         }
+        }
+       ]
+      }
+     ],
+     title: {
+      en: "OPERATIONS"
+     }
+    }
+   ]
+  },
+  {
+   name: "PEOPLE",
+   elements: [
+    {
+     type: "panel",
+     name: "PeoplePanel",
+     elements: [
+      {
+       type: "radiogroup",
+       name: "Q29",
+       title: {
+        en: " Are people with the required skills easily available/be attracted by your idea?"
+       },
+       choices: [
+        {
+         value: "4",
+         text: {
+          en: "Definitely yes "
+         }
+        },
+        {
+         value: "2",
+         text: {
+          en: "Probably yes "
+         }
+        },
+        {
+         value: "1",
+         text: {
+          en: "Might or might not "
+         }
+        },
+        {
+         value: "0",
+         text: {
+          en: "Probably not "
+         }
+        }
+       ]
+      },
+      {
+       type: "radiogroup",
+       name: "Q30",
+       title: {
+        en: "How committed are you to making this a success? "
+       },
+       choices: [
+        {
+         value: "4",
+         text: {
+          en: "Extremely "
+         }
+        },
+        {
+         value: "1",
+         text: {
+          en: "Somewhat "
+         }
+        },
+        {
+         value: "1",
+         text: {
+          en: "Tentative "
+         }
+        }
+       ]
+      }
+     ],
+     title: {
+      en: "PEOPLE"
+     }
+    }
+   ]
+  }
+ ],
+ sendResultOnPageNext: true,
+ showProgressBar: "bottom"
+}
+
+
+function sendDataToServer(survey) {
+    //send Ajax request to your web server.
+    alert("The results are:" + JSON.stringify(s.data));
+}
+
+
+var survey = new Survey.Model(surveyJSON);
+survey.onComplete.add(function(result) {
+    console.log(result.data);
+    var surveyTotal = 0;
+    for (var i in result.data) {
+      surveyTotal += result.data[i];
+    }
+    if(surveyTotal < 30) {
+        document.querySelector("#surveyResult").innerHTML =
+        "You may have a great idea, but you need a bit more time assessing the practicalities of starting your business. Try further developing your business plan or working with a mentor to assess the areas where you scored lowest. ";
+    }
+    else if(surveyTotal < 60) {
+        document.querySelector("#surveyResult").innerHTML =
+        "You have a grasp of the requirements for your new venture but are running a fair bit of risk if you launch now - you may be facing a weak market or low return on your idea.  ";
+    }
+    else if(surveyTotal < 90) {
+        document.querySelector("#surveyResult").innerHTML =
+        "You have a solid business idea but may need to do a bit more refining on your logistics, market readiness and capacity before you're ready to launch. ";
+    }
+    else 
+    {
+       document.querySelector("#surveyResult").innerHTML =
+       "You're on solid ground with your planning! You may want to isolate the area where your scores were slightly low (i.e., sales or operations) and put a bit more planning time into that area.  "; 
+    }
+  /*  for (var i = 0; i < result.data.length; i++) {
+    console.log(result.data[i]);
+    }*/
+   /* document.querySelector("#surveyResult").innerHTML =
+      "result: " + JSON.stringify(result.data);*/
+  });
+$("#surveyContainer").Survey({
+    model: survey
+});
+
+</script> 
+    </body>
+</html>
