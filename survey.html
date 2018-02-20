@@ -1034,6 +1034,7 @@ survey.onComplete.add(function(result) {
     for (var i in result.data) {
       surveyTotal += result.data[i];
     }
+    console.log(surveyTotal);
     if(surveyTotal > 0 && surveyTotal < 30) {
         document.querySelector("#surveyResult").innerHTML = "Your result is " + surveyTotal +
         "<h3> You may have a great idea, but you need a bit more time assessing the practicalities of starting your business. Try further developing your business plan or working with a mentor to assess the areas where you scored lowest.<h3>";
