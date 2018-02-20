@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Survey</title>
+		<link href="https://surveyjs.azureedge.net/1.0.9/survey.css" type="text/css" rel="stylesheet" />
+		<script src="https://surveyjs.azureedge.net/1.0.9/survey.jquery.min.js"></script>
+    </head>
+    <body>
+        
+		<div id="surveyContainer"></div>
+
+        
+var surveyJSON = {pages:[{name:"page1",elements:[{type:"html",name:"Q1",html:"OPPORTUNITY"},{type:"radiogroup",name:"Cultural story",title:"What local cultural story are you telling through your business?",choices:[{value:"4",text:"Connection to the land/using local resources"},{value:"4",text:"Connected to local heritage/reuse of existing assets "},{value:"3",text:"Connected to other local businesses "},{value:"1",text:"There is no strong local narrative"}]},{type:"panel",name:"MARKET",elements:[{type:"radiogroup",name:"Q3",title:"What is the size of the market you are targeting?",choices:[{value:"1",text:"Under $100,000 "},{value:"2",text:"$100,000 - $250,000 under"},{value:"3",text:"$250,000 - $500,000 under "},{value:"4",text:" $500,000 and above "}]},{type:"radiogroup",name:"Q4",title:"How much market share do you expect to acquire?",choices:[{value:"1",text:"Less than 5% "},{value:"2",text:"5% to Less than 10%"},{value:"3",text:"10% to less than 25% "},{value:"4",text:"25% and above "}]},{type:"radiogroup",name:"Q5",title:"Where are your customers?",choices:[{value:"3",text:" \tLocal"},{value:"3",text:" \tRegional "},{value:"1",text:" \tTourists "},{value:"4",text:" \tCombination "},{value:"2",text:" \tInternational "}]}],title:"MARKET"}]}]}
+
+function sendDataToServer(survey) {
+    //send Ajax request to your web server.
+    alert("The results are:" + JSON.stringify(s.data));
+}
+
+var survey = new Survey.Model(surveyJSON);
+$("#surveyContainer").Survey({
+    model: survey,
+    onComplete: sendDataToServer
+});
+
+
+    </body>
+</html>

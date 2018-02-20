@@ -5253,10 +5253,10 @@ html.jv-open.jv-open-right body#jvette>.jv-panel+.jv-panel,html.jv-opened.jv-ope
     font-style: normal;
     font-size: 12px;
     font-weight:400;
-    letter-spacing: 3px;
+    letter-spacing: 1px;
     color: #231f20;
-    text-transform: uppercase;
-    line-height: 1.5em;
+    text-transform: ;
+    line-height: 1em;
 }
 .forfurther
 {
