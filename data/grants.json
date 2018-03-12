@@ -1,0 +1,394 @@
+[
+  {
+    "Organization": "Alberta Women Entrepreneurs",
+    "Province": "Alberta",
+    "Relevance": "Government of Alberta",
+    "WebsiteSupport": "https://www.awebusiness.com/financing/",
+    "Services": "Loans"
+  },
+  {
+    "Organization": "Community Futures Alberta",
+    "Province": "Alberta",
+    "Relevance": "Partnership with Government Agencies",
+    "WebsiteSupport": "http://albertacf.com/business-loans",
+    "Services": "Loans & Trainings"
+  },
+  {
+    "Organization": "Self-Employment Program",
+    "Province": "Alberta",
+    "Relevance": "Government of Alberta",
+    "WebsiteSupport": "http://work.alberta.ca/skills/self-employment-training.html",
+    "Services": "Loans & Trainings"
+  },
+  {
+    "Organization": "Entrepreneurs with Disabilities Program",
+    "Province": "Alberta",
+    "Relevance": "Government of Canada",
+    "WebsiteSupport": "http://www.wd-deo.gc.ca/eng/13643.asp",
+    "Services": "Loans"
+  },
+  {
+    "Organization": "Community Futures British Columbia",
+    "Province": "British Columbia",
+    "Relevance": "Partnership with Government Agencies",
+    "WebsiteSupport": "https://www.communityfutures.ca/index.php?q=business-loans",
+    "Services": "Loans"
+  },
+  {
+    "Organization": "Entrepreneurs with Disabilities Program",
+    "Province": "British Columbia",
+    "Relevance": "Government of Canada",
+    "WebsiteSupport": "http://www.wd-deo.gc.ca/eng/13643.asp",
+    "Services": "Loans"
+  },
+  {
+    "Organization": "Women's Enterprise Centre",
+    "Province": "British Columbia",
+    "Relevance": "Government of Canada",
+    "WebsiteSupport": "http://www.womensenterprise.ca/",
+    "Services": "Loans & Trainings"
+  },
+  {
+    "Organization": "Manitoba Jobs and the Economy",
+    "Province": "Manitoba",
+    "Relevance": "Government of Manitoba",
+    "WebsiteSupport": "http://www.entrepreneurshipmanitoba.ca/programs-services/39/business-start-program",
+    "Services": "Loans & Trainings"
+  },
+  {
+    "Organization": "Community Futures Manitoba",
+    "Province": "Manitoba",
+    "Relevance": "Partnership with Government Agencies",
+    "WebsiteSupport": "https://cfmanitoba.ca/",
+    "Services": "Loans"
+  },
+  {
+    "Organization": "Young Entrepreneurs Program",
+    "Province": "Manitoba",
+    "Relevance": "Government of Manitoba",
+    "WebsiteSupport": "http://www.gov.mb.ca/cyo/youth/businesses/youngentrepreneurs.html",
+    "Services": "Loans"
+  },
+  {
+    "Organization": "Entrepreneurs with Disabilities Program",
+    "Province": "Manitoba",
+    "Relevance": "Government of Canada",
+    "WebsiteSupport": "http://www.wd-deo.gc.ca/eng/13643.asp",
+    "Services": "Loans"
+  },
+  {
+    "Organization": "CBDC First-time Entrepreneur Loan",
+    "Province": "Nova Scotia",
+    "Relevance": "Government of Canada",
+    "WebsiteSupport": "http://www.cbdc.ca/en/programs/cbdc-first-time-entrepreneur-loan",
+    "Services": "Loans & Trainings"
+  },
+  {
+    "Organization": "Impact: more than a start up loan",
+    "Province": "Nova Scotia",
+    "Relevance": "Government of Canada",
+    "WebsiteSupport": "https://impactatlantic.ca/en",
+    "Services": "Loans"
+  },
+  {
+    "Organization": "Atlantic Canada Opportunities Agency",
+    "Province": "Nova Scotia",
+    "Relevance": "Government of Canada",
+    "WebsiteSupport": "http://www.acoa-apeca.gc.ca/eng/ImLookingFor/ProgramInformation/Pages/ProgramDetails.aspx?ProgramID=4",
+    "Services": "Loans"
+  },
+  {
+    "Organization": "Atlantic Association of Community Business Development Corporations",
+    "Province": "Nova Scotia",
+    "Relevance": "Atlantic Association of CBDCs",
+    "WebsiteSupport": "http://www.cbdc.ca/en/atlantic-association-of-cbdcs",
+    "Services": "Loans"
+  },
+  {
+    "Organization": "Impact: more than a start up loan",
+    "Province": "Nova Scotia",
+    "Relevance": "Government of Canada",
+    "WebsiteSupport": "https://impactatlantic.ca/en",
+    "Services": "Loans"
+  },
+  {
+    "Organization": "Atlantic Canada Opportunities Agency",
+    "Province": "Nova Scotia",
+    "Relevance": "Government of Canada",
+    "WebsiteSupport": "http://www.acoa-apeca.gc.ca/eng/ImLookingFor/ProgramInformation/Pages/ProgramDetails.aspx?ProgramID=4",
+    "Services": "Loans"
+  },
+  {
+    "Organization": "CBDC First-time Entrepreneur Loan",
+    "Province": "Newfoundland & Labrador",
+    "Relevance": "Government of Canada",
+    "WebsiteSupport": "http://www.cbdc.ca/en/programs/cbdc-first-time-entrepreneur-loan",
+    "Services": "Loans & Trainings"
+  },
+  {
+    "Organization": "Impact: more than a start up loan",
+    "Province": "Newfoundland & Labrador",
+    "Relevance": "Government of Canada",
+    "WebsiteSupport": "https://impactatlantic.ca/en",
+    "Services": "Loans"
+  },
+  {
+    "Organization": "Atlantic Canada Opportunities Agency",
+    "Province": "Newfoundland & Labrador",
+    "Relevance": "Government of Canada",
+    "WebsiteSupport": "http://www.acoa-apeca.gc.ca/eng/ImLookingFor/ProgramInformation/Pages/ProgramDetails.aspx?ProgramID=2",
+    "Services": "Loans"
+  },
+  {
+    "Organization": "Atlantic Association of Community Business Development Corporations",
+    "Province": "Newfoundland & Labrador",
+    "Relevance": "Atlantic Association of CBDCs",
+    "WebsiteSupport": "http://www.cbdc.ca/en/atlantic-association-of-cbdcs",
+    "Services": "Loans"
+  },
+  {
+    "Organization": "Impact: more than a start up loan",
+    "Province": "Newfoundland & Labrador",
+    "Relevance": "Government of Canada",
+    "WebsiteSupport": "https://impactatlantic.ca/en",
+    "Services": "Loans"
+  },
+  {
+    "Organization": "Atlantic Canada Opportunities Agency",
+    "Province": "Newfoundland & Labrador",
+    "Relevance": "Government of Canada",
+    "WebsiteSupport": "http://www.acoa-apeca.gc.ca/eng/ImLookingFor/ProgramInformation/Pages/ProgramDetails.aspx?ProgramID=2",
+    "Services": "Loans"
+  },
+  {
+    "Organization": "CBDC First-time Entrepreneur Loan",
+    "Province": "New Brunswick",
+    "Relevance": "Government of Canada",
+    "WebsiteSupport": "http://www.cbdc.ca/en/programs/cbdc-first-time-entrepreneur-loan",
+    "Services": "Loans & Trainings"
+  },
+  {
+    "Organization": "Impact: more than a start up loan",
+    "Province": "New Brunswick",
+    "Relevance": "Government of Canada",
+    "WebsiteSupport": "https://impactatlantic.ca/en",
+    "Services": "Loans"
+  },
+  {
+    "Organization": "Atlantic Canada Opportunities Agency",
+    "Province": "New Brunswick",
+    "Relevance": "Government of Canada",
+    "WebsiteSupport": "http://www.acoa-apeca.gc.ca/eng/ImLookingFor/ProgramInformation/Pages/ProgramDetails.aspx?ProgramID=5",
+    "Services": "Loans"
+  },
+  {
+    "Organization": "Atlantic Association of Community Business Development Corporations",
+    "Province": "New Brunswick",
+    "Relevance": "Atlantic Association of CBDCs",
+    "WebsiteSupport": "http://www.cbdc.ca/en/atlantic-association-of-cbdcs",
+    "Services": "Loans"
+  },
+  {
+    "Organization": "Impact: more than a start up loan",
+    "Province": "New Brunswick",
+    "Relevance": "Government of Canada",
+    "WebsiteSupport": "https://impactatlantic.ca/en",
+    "Services": "Loans"
+  },
+  {
+    "Organization": "Atlantic Canada Opportunities Agency",
+    "Province": "New Brunswick",
+    "Relevance": "Government of Canada",
+    "WebsiteSupport": "http://www.acoa-apeca.gc.ca/eng/ImLookingFor/ProgramInformation/Pages/ProgramDetails.aspx?ProgramID=5",
+    "Services": "Loans"
+  },
+  {
+    "Organization": "CBDC First-time Entrepreneur Loan",
+    "Province": "Prince Edward Island",
+    "Relevance": "Government of Canada",
+    "WebsiteSupport": "http://www.cbdc.ca/en/programs/cbdc-first-time-entrepreneur-loan",
+    "Services": "Loans & Trainings"
+  },
+  {
+    "Organization": "Impact: more than a start up loan",
+    "Province": "Prince Edward Island",
+    "Relevance": "Government of Canada",
+    "WebsiteSupport": "https://impactatlantic.ca/en",
+    "Services": "Loans"
+  },
+  {
+    "Organization": "Atlantic Canada Opportunities Agency",
+    "Province": "Prince Edward Island",
+    "Relevance": "Government of Canada",
+    "WebsiteSupport": "http://www.acoa-apeca.gc.ca/eng/ImLookingFor/ProgramInformation/Pages/ProgramDetails.aspx?ProgramID=3",
+    "Services": "Loans"
+  },
+  {
+    "Organization": "Atlantic Association of Community Business Development Corporations",
+    "Province": "Prince Edward Island",
+    "Relevance": "Atlantic Association of CBDCs",
+    "WebsiteSupport": "http://www.cbdc.ca/en/atlantic-association-of-cbdcs",
+    "Services": "Loans"
+  },
+  {
+    "Organization": "Impact: more than a start up loan",
+    "Province": "Prince Edward Island",
+    "Relevance": "Government of Canada",
+    "WebsiteSupport": "https://impactatlantic.ca/en",
+    "Services": "Loans"
+  },
+  {
+    "Organization": "Atlantic Canada Opportunities Agency",
+    "Province": "Prince Edward Island",
+    "Relevance": "Government of Canada",
+    "WebsiteSupport": "http://www.acoa-apeca.gc.ca/eng/ImLookingFor/ProgramInformation/Pages/ProgramDetails.aspx?ProgramID=3",
+    "Services": "Loans"
+  },
+  {
+    "Organization": "Business Development Centres of Nunavut",
+    "Province": "Nunavut",
+    "Relevance": "Partnership with Government Agencies",
+    "WebsiteSupport": "http://www.kcfi.ca/, https://www.baffinbdc.ca/",
+    "Services": "Loans"
+  },
+  {
+    "Organization": "Community Futures Program",
+    "Province": "Northwest Territories",
+    "Relevance": "Government of the Northwest Territories",
+    "WebsiteSupport": "http://www.iti.gov.nt.ca/en/services/community-futures-program",
+    "Services": "Loans"
+  },
+  {
+    "Organization": "Financial programs",
+    "Province": "Northwest Territories",
+    "Relevance": "Government of the Northwest Territories",
+    "WebsiteSupport": "https://www.bdic.ca/financial-programs/",
+    "Services": "Loans"
+  },
+  {
+    "Organization": "Support for Entrepreneurs and Economic Development",
+    "Province": "Northwest Territories",
+    "Relevance": "Government of the Northwest Territories",
+    "WebsiteSupport": "http://www.iti.gov.nt.ca/en/services/support-entrepreneurs-and-economic-development-seed",
+    "Services": "Loans"
+  },
+  {
+    "Organization": "Starter Company Plus",
+    "Province": "Ontario",
+    "Relevance": "Government of Ontario",
+    "WebsiteSupport": "https://www.ontario.ca/page/small-business-advice-support-services-regulations",
+    "Services": "Grants"
+  },
+  {
+    "Organization": "Toronto Enterprise Fund",
+    "Province": "Ontario",
+    "Relevance": "Government of Canada",
+    "WebsiteSupport": "http://www.torontoenterprisefund.ca/",
+    "Services": "Grants"
+  },
+  {
+    "Organization": "Microlending for Women in Ontario Program",
+    "Province": "Ontario",
+    "Relevance": "Government of Ontario",
+    "WebsiteSupport": "https://canadabusiness.ca/programs/microlending-for-women-in-ontario-program-1/F-S-N-A5",
+    "Services": "Loans & Trainings"
+  },
+  {
+    "Organization": "Micro-Loan Program",
+    "Province": "Prince Edward Island",
+    "Relevance": "Government of Prince Edward Island",
+    "WebsiteSupport": "https://www.princeedwardisland.ca/en/information/finance-pei/micro-loan-program",
+    "Services": "Loans"
+  },
+  {
+    "Organization": "Small Business Assistance",
+    "Province": "Prince Edward Island",
+    "Relevance": "Government of Prince Edward Island",
+    "WebsiteSupport": "https://www.princeedwardisland.ca/en/information/finance-pei/small-business-assistance",
+    "Services": "Loans"
+  },
+  {
+    "Organization": "Tourism Financing Assistance",
+    "Province": "Prince Edward Island",
+    "Relevance": "Government of Prince Edward Island",
+    "WebsiteSupport": "https://www.princeedwardisland.ca/en/information/finance-pei/tourism-financing-assistance",
+    "Services": "Loans"
+  },
+  {
+    "Organization": "Financial support for aspiring farmers",
+    "Province": "Quebec",
+    "Relevance": "Government of Quebec",
+    "WebsiteSupport": "https://www.fadq.qc.ca/en/financial-support-for-aspiring-farmers/description/",
+    "Services": "Grants"
+  },
+  {
+    "Organization": "Jeunes entreprises collectives",
+    "Province": "Quebec",
+    "Relevance": "Partnership with Government Agencies",
+    "WebsiteSupport": "https://pmemtl.com/outils-et-ressources/financement#jeunes_entreprises_collectives",
+    "Services": "Loans"
+  },
+  {
+    "Organization": "FONDS MOSAÏQUE",
+    "Province": "Quebec",
+    "Relevance": "Government of Quebec",
+    "WebsiteSupport": "http://fondsmosaique.com/content/le-fonds-mosa%C3%AFque",
+    "Services": "Loans"
+  },
+  {
+    "Organization": "Clarence Campeau Development Fund",
+    "Province": "Saskatchewan",
+    "Relevance": "Partnership with Government Agencies",
+    "WebsiteSupport": "http://www.clarencecampeau.com/",
+    "Services": "Loans"
+  },
+  {
+    "Organization": "Community Futures Saskatchewan",
+    "Province": "Saskatchewan",
+    "Relevance": "Government of Canada",
+    "WebsiteSupport": "https://cfsask.ca/loans/loan-information",
+    "Services": "Loans"
+  },
+  {
+    "Organization": "Grants and professional development",
+    "Province": "Saskatchewan",
+    "Relevance": "Partnership with Government Agencies",
+    "WebsiteSupport": "http://www.saskartsboard.ca/",
+    "Services": "Grants"
+  },
+  {
+    "Organization": "Entrepreneurs with Disabilities Program",
+    "Province": "Saskatchewan",
+    "Relevance": "Government of Canada",
+    "WebsiteSupport": "http://www.wd-deo.gc.ca/eng/13643.asp",
+    "Services": "Loans"
+  },
+  {
+    "Organization": "BDC Financing for starting a business",
+    "Province": "All Canada",
+    "Relevance": "Government of Canada",
+    "WebsiteSupport": "https://www.bdc.ca/en/financing/business-loans/pages/financing-starting-a-business.aspx",
+    "Services": "Loans"
+  },
+  {
+    "Organization": "Canada Small Business Financing Program",
+    "Province": "All Canada",
+    "Relevance": "Government of Canada",
+    "WebsiteSupport": "http://www.ic.gc.ca/eic/site/csbfp-pfpec.nsf/eng/home",
+    "Services": "Loans"
+  },
+  {
+    "Organization": "Canadian Agricultural Loans Act program",
+    "Province": "All Canada",
+    "Relevance": "Government of Canada",
+    "WebsiteSupport": "http://www.agr.gc.ca/eng/?id=1288035482429",
+    "Services": "Loans"
+  },
+  {
+    "Organization": "Opportunities Fund for Persons with Disabilities",
+    "Province": "All Canada",
+    "Relevance": "Government of Canada",
+    "WebsiteSupport": "https://www.canada.ca/en/employment-social-development/services/funding/disability-opportunity-national.html",
+    "Services": "Loans"
+  }
+]

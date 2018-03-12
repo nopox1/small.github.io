@@ -1,0 +1,262 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel='stylesheet' id='style-css' async href='custom/themes/small/style.css' type='text/css' media='all' />
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+        <select id="provinceName" v-on:change="onChange">
+            <option disabled value="">Please select one</option>
+            <option value="AB">Alberta</option>
+            <option value="BC">British Columbia</option>
+            <option value="MB">Manitoba</option>
+            <option value="NB">New Brunswick</option>
+            <option value="NL">Newfoundland and Labrador</option>
+            <option value="NS">Nova Scotia</option>
+            <option value="ON">Ontario</option>
+            <option value="PE">Prince Edward Island</option>
+            <option value="QC">Quebec</option>
+            <option value="SK">Saskatchewan</option>
+            <option value="NT">Northwest Territories</option>
+            <option value="NU">Nunavut</option>
+            <option value="YT">Yukon</option>
+        </select>
+
+        <table id="grants">
+          <thead>
+            <tr>
+              <th v-for="col in columns" v-on:click="sortTable(col)">{{col | capitalize}}</th>
+            </tr>
+            <tr>
+          </tr>
+          </thead>
+          <tbody>
+            <tr v-for="row in rows">
+              <td v-for="col in columns">{{row[col]}}</td>
+            </tr>
+           <!--<tr v-for="row in rows">
+              <td>{{row.Organization}}</td>
+              <td>{{row.Relevance}}</td>
+              <td>{{row.contactInformation}}</td>
+              <td>{{row.Services}}</td>
+            </tr>-->
+          </tbody>
+        </table>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.js"><\/script>')</script>
+        
+        <script type="text/javascript">
+
+       var grantsArray = [];
+
+       var goverGrants  = 'data/government_grants.json';
+       console.log(goverGrants);
+
+       var grants = new Vue({
+                el: '#grants',
+                data: {
+                    columns: ['Organization', 'Relevance', 'contactInformation', 'Services'],
+                    ascending: false,
+                    sortColumn: '',
+                    rows: []
+                  },
+                methods: {
+                    "sortTable": function sortTable(col) {
+                        if (this.sortColumn === col) {
+                            this.ascending = !this.ascending;
+                        }   
+                        else {
+                            this.ascending = true;
+                            this.sortColumn = col;
+                        }
+                        
+                        var ascending = this.ascending;
+
+                        this.rows.sort(function(a, b) {
+                        if (a[col] > b[col]) {
+                            return ascending ? 1 : -1
+                        }                
+                        else if (a[col] < b[col]) {
+                            return ascending ? -1 : 1
+                        }
+                            return 0;
+                        })
+                    }
+                },
+                computed: {
+                    "columns": function columns() {
+                        console.log('columns');
+                     if(this.rows.length == 0) {
+                         console.log('empty');
+                       return [];
+                     }
+                     return Object.keys(this.rows[0])
+                    }
+                },
+               /* created: function()
+                {
+                    var self = this;
+                      console.log('created');
+                     
+
+                    $.get(goverGrants, function(data){ 
+                        var json = JSON.parse(data);
+                        console.log('test');
+                        //console.log(json[0].AB[0]);
+                        self.rows = json;
+                    })   
+                    /*fetch(goverGrants)
+                    .then(res => res.json())
+                    .then(res => {
+                        console.log(res);
+                      self.rows = res[0].AB[0];
+                    })             
+                 },*/
+
+
+                mounted: function(){
+                    var keyProvince = $("#provinceName option:selected").val();
+                    var self = this;
+                    console.log('grants for province:'+keyProvince);
+                    $.get(goverGrants, function(data){ 
+                    grantsArray = data;   //JSON && JSON.parse(data) || $.parseJSON(data);
+                    console.log(data[0][$("#provinceName option:selected").val()]);
+                    self.rows = getValues(grantsArray,keyProvince);//JSON.stringify(data);
+                    console.log(self.rows);
+                    }, 'json')}
+            });
+
+           var provinceName = new Vue({
+              el: '#provinceName',
+              data: {
+              },
+              methods: {
+                onChange: function(event) {
+                  setGrantsByProvince(event.target.value);
+                }
+              }
+            });
+
+            function getValues(obj, key) {
+                var objects = [];
+                 console.log("getValues");
+                for (var i in obj) {
+                    console.log(obj[i].hasOwnProperty(key));
+                    console.log(obj[i][key]);
+                    if (!obj.hasOwnProperty(i)) continue;
+                    if (typeof obj[i][key] == 'object') {
+                        console.log("if " + obj[i]);
+                        return obj[i][key];
+                    }
+                }
+                return objects;
+            }
+
+            function getObjects(obj, key) {
+                var objects = [];
+                var found = false;
+
+                for (var i in obj) {
+                     console.log(found);
+                    if(found){
+                                break;
+                            }
+                    console.log("i - " + i);
+                    if (!obj.hasOwnProperty(i)) continue;
+                    if (typeof obj[i] == 'object') {
+                        console.log("obj[i] " + obj[i]);
+                        if(i == key)
+                        {
+                            objects.push(obj);
+                            found = true;
+                            console.log(found);
+                            break;
+                        }
+                        else
+                        {
+                         objects = objects.concat(getObjects(obj[i], key));    
+                        }
+                    }
+                }
+                return objects;
+            }
+
+        const getNestedObject = (nestedObj, pathArr) => {
+         return pathArr.reduce((obj, key) =>
+         (obj && obj[key] !== 'undefined') ? obj[key] : null, nestedObj);
+        }
+
+            function getArrayFromJson(url) {
+                return $.ajax({
+                    url: url,
+                    dataType: 'json'
+                });
+            }
+            
+        /*function getArrayFromJson(url) {
+            $.ajax({
+              url: url,
+              beforeSend: function(xhr){
+                if (xhr.overrideMimeType)
+                {
+                  xhr.overrideMimeType("application/json");
+                }
+              },
+              dataType: 'json',
+              data: data,
+              success: callback
+            });
+        }*/
+
+     function setGrantsByProvince(province) {
+        switch (province) {
+            case "AB":
+                grants.rows = getValues(grantsArray, province);
+                break;
+            case "MB":
+                grants.rows = getValues(grantsArray, province);
+                break;
+            case "NB":
+                grants.rows = getValues(grantsArray, province);
+                break;
+            case "NL":
+                grants.rows = getValues(grantsArray, province);
+                break;
+            case "NS":
+                grants.rows = getValues(grantsArray, province);
+                break;
+            case "ON":
+                grants.rows = getValues(grantsArray, province);
+                break;
+            case "PE":
+                grants.rows = getValues(grantsArray, province);
+                break;
+            case "QC":
+                grants.rows = getValues(grantsArray, province);
+                break;
+            case "SK":
+                grants.rows = getValues(grantsArray, province);
+                break;
+            case "NT":
+                grants.rows = getValues(grantsArray, province);
+                break;
+            case "NU":
+                grants.rows = getValues(grantsArray, province);
+                break;
+            default:
+                grants.rows = grants.rows = getValues(grantsArray, province);
+                break;
+        }
+    }
+        </script>
+        
+        <!--<script src="js/main.js"></script>-->
+    </body>
+</html>

@@ -1,0 +1,252 @@
+[
+  {
+    "AB": [
+      {
+        "Organization": "Alberta Women Entrepreneurs",
+        "Relevance": "Government of Alberta",
+        "contactInformation": "https://www.awebusiness.com/financing/",
+        "Services": "Financing"
+      },
+      {
+        "Organization": "Community Futures Alberta",
+        "Relevance": "Partnership with government agencies",
+        "contactInformation": "http://albertacf.com/business-loans",
+        "Services": "Financing"
+      },
+      {
+        "Organization": "Self-Employment Program ",
+        "Relevance": "Government of ALBERTA",
+        "contactInformation": "http://work.alberta.ca/skills/self-employment-training.html",
+        "Services": "Financing/ Mentoring"
+      }
+    ]
+  },
+  {
+    "BC": [
+      {
+        "Organization": "Community Futures British Columbia",
+        "Relevance": "Partnership with government agencies",
+        "contactInformation": "https://www.communityfutures.ca/index.php?q=business-loans",
+        "Services": "Financing"
+      },
+      {
+        "Organization": "Community Futures Self Employment Program",
+        "Relevance": "Partnership with government agencies",
+        "contactInformation": "https://www.communityfutures.ca/index.php?q=self-employment-program-0",
+        "Services": "Financing"
+      },
+      {
+        "Organization": "Women's Enterprise Centre ",
+        "Relevance": "Government of Canada",
+        "contactInformation": "http://www.womensenterprise.ca/",
+        "Services": "Financing"
+      }
+    ]
+  },
+  {
+    "MB": [
+            {
+        "Organization": "MANITOBA JOBS AND THE ECONOMY",
+        "Relevance": "Government of Manitoba",
+        "contactInformation": "http://www.entrepreneurshipmanitoba.ca/programs-services/39/business-start-program",
+        "Services": "Financing"
+      },
+      {
+        "Organization": "Community Futures Manitoba",
+        "Relevance": "Partnership with government agencies",
+        "contactInformation": "https://cfmanitoba.ca/",
+        "Services": "Financing"
+      },
+      {
+        "Organization": "Young Entrepreneurs Program",
+        "Relevance": "Government of Manitoba",
+        "contactInformation": "http://www.gov.mb.ca/cyo/youth/businesses/youngentrepreneurs.html",
+        "Services": "Financing/ Mentoring"
+      }
+    ]
+  },
+  {
+    "NB": [
+      {
+        "Organization": "CBDC First-time Entrepreneur Loan",
+        "Relevance": "Government of Canada",
+        "contactInformation": "http://www.cbdc.ca/en/programs/cbdc-first-time-entrepreneur-loan",
+        "Services": "Financing"
+      },
+      {
+        "Organization": "Impact: more than a start up loan",
+        "Relevance": "Government of Canada",
+        "contactInformation": "https://impactatlantic.ca/en",
+        "Services": "Financing"
+      },
+      {
+        "Organization": "Atlantic Canada Opportunities Agency",
+        "Relevance": "Government of Canada",
+        "contactInformation": "http://www.acoa-apeca.gc.ca/eng/ImLookingFor/ProgramInformation/Pages/ProgramDetails.aspx?ProgramID=2",
+        "Services": "Financing"
+      }
+    ]
+  },
+  {
+    "NL": [
+            {
+        "Organization": "CBDC First-time Entrepreneur Loan",
+        "Relevance": "Government of Canada",
+        "contactInformation": "http://www.cbdc.ca/en/programs/cbdc-first-time-entrepreneur-loan",
+        "Services": "Financing"
+      },
+      {
+        "Organization": "Impact: more than a start up loan",
+        "Relevance": "Government of Canada",
+        "contactInformation": "https://impactatlantic.ca/en",
+        "Services": "Financing"
+      },
+      {
+        "Organization": "Atlantic Canada Opportunities Agency",
+        "Relevance": "Government of Canada",
+        "contactInformation": "http://www.acoa-apeca.gc.ca/eng/ImLookingFor/ProgramInformation/Pages/ProgramDetails.aspx?ProgramID=2",
+        "Services": "Financing"
+      }
+    ]
+  },
+  {
+    "NS": [
+            {
+        "Organization": "Centre for Entrepreneurship Education Development — Financing",
+        "Relevance": "Government of Canada",
+        "contactInformation": "https://www.communityfutures.ca/index.php?q=business-loans",
+        "Services": "Financing"
+      },
+      {
+        "Organization": "Small Business Loan Guarantee Program",
+        "Relevance": "Government of Nova Scotia",
+        "contactInformation": "https://www.communityfutures.ca/index.php?q=self-employment-program-0",
+        "Services": "Financing"
+      },
+      {
+        "Organization": "New Small Business Tax Deduction",
+        "Relevance": "Government of Nova Scotia",
+        "contactInformation": "http://www.womensenterprise.ca/",
+        "Services": "Financing"
+      }
+    ]
+  },
+  {
+    "ON": [
+            {
+        "Organization": "Community Futures ON",
+        "Relevance": "",
+        "contactInformation": "" ,
+        "Services": "Financing"
+      },
+      {
+        "Organization": "",
+        "Relevance": "Partnership",
+        "contactInformation": "",
+        "Services": "Financing"
+      },
+      {
+        "Organization": "",
+        "Relevance": "",
+        "contactInformation": "",
+        "Services": "Financing"
+      }
+    ]
+  },
+  {
+    "PE": [
+            {
+        "Organization": "Micro-Loan Program",
+        "Relevance": "Government of Prince Edward Island",
+        "contactInformation": "https://www.princeedwardisland.ca/en/information/finance-pei/micro-loan-program",
+        "Services": "Financing"
+      },
+      {
+        "Organization": "Small Business Assistance",
+        "Relevance": "Government of Prince Edward Island",
+        "contactInformation": "https://www.princeedwardisland.ca/en/information/finance-pei/small-business-assistance",
+        "Services": "Financing"
+      },
+      {
+        "Organization": "Tourism Financing Assistance",
+        "Relevance": "Government of Prince Edward Island",
+        "contactInformation": "https://www.princeedwardisland.ca/en/information/finance-pei/tourism-financing-assistance",
+        "Services": "Financing"
+      }
+    ]
+  },
+  {
+    "QC": [
+           {
+        "Organization": "Financial support for aspiring farmers",
+        "Relevance": "Government of Quebec",
+        "contactInformation": "https://www.fadq.qc.ca/en/financial-support-for-aspiring-farmers/description/",
+        "Services": "Financing"
+      },
+      {
+        "Organization": "Jeunes entreprises collectives",
+        "Relevance": "Partnership with government agencies",
+        "contactInformation": "https://pmemtl.com/outils-et-ressources/financement#jeunes_entreprises_collectives",
+        "Services": "Financing"
+      },
+      {
+        "Organization": "FONDS MOSAÏQUE",
+        "Relevance": "Government of Quebec",
+        "contactInformation": "http://fondsmosaique.com/content/le-fonds-mosa%C3%AFque",
+        "Services": "Financing"
+      }
+    ]
+  },
+  {
+    "SK": [
+            {
+        "Organization": "Clarence Campeau Development Fund",
+        "Relevance": "Partnership with government agencies",
+        "contactInformation": "http://www.clarencecampeau.com/",
+        "Services": "Financing"
+      },
+      {
+        "Organization": "Community Futures Saskatchewan",
+        "Relevance": "Government of Canada",
+        "contactInformation": "https://cfsask.ca/loans/loan-information",
+        "Services": "Financing"
+      },
+      {
+        "Organization": "Grants and professional development",
+        "Relevance": "Partnership with Government Agencies",
+        "contactInformation": "http://www.saskartsboard.ca/",
+        "Services": "Financing"
+      }
+    ]
+  },
+  {
+    "NT": [
+            {
+        "Organization": "Community",
+        "Relevance": "Partnership",
+        "contactInformation": "https://",
+        "Services": "Financing"
+      }
+    ]
+  },
+  {
+    "NU": [
+            {
+        "Organization": "Business Development Centres of Nunavut",
+        "Relevance": "Partnership with government agencies",
+        "contactInformation": "http://www.kcfi.ca/, https://www.baffinbdc.ca/",
+        "Services": "Financing"
+      }
+    ]
+  },
+  {
+    "YT": [
+      {
+        "Organization": "Community",
+        "Relevance": "Partnership",
+        "contactInformation": "https://",
+        "Services": "Financing"
+      }
+    ]
+  }
+]
