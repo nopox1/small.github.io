@@ -9,7 +9,7 @@
 	}	
 	const Home = {
 		  props: ['hello'],
-		  template: '<div>Welcome to the <b>home page</b>!</div>'
+		  template: '#home-template'
 		}
 
     const Dashboard = {
@@ -20,8 +20,9 @@
 		  template: '#futurpreneur-template',
 		  data: function () {
 		        return { 
-		          drawer: null,
+		          drawer: true,
 			      search: '',
+			      loading: true,
 			      headers: [
 			      /*  {
 			          text: 'Dessert (100g serving)',
@@ -29,27 +30,37 @@
 			          sortable: false,
 			          value: 'name'
 			        },*/
-			        { text: 'Province', value: 'Province' },
-			        { text: 'Partner', value: 'Partners' },
-			        { text: 'Website', value: 'WebsiteSupport' },
-			        { text: 'Zip Code', value: 'ZipCodes' },
-			        { text: 'C1', value: 'C1' },
-			        { text: 'C2', value: 'C2' },
-			        { text: 'C3', value: 'C3' },
-			        { text: 'C4', value: 'C4' },
-			        { text: 'C5', value: 'C5' },
-			        { text: 'C6', value: 'C6' }
+			        { text: 'Province', value: 'Province', align: 'center', width: '20%', filterable: {show: false}},
+			        { text: 'Partner', value: 'Partners', align: 'center', width: '30%', filterable: {show: false} },
+			        { text: 'Website', value: 'WebsiteSupport', sortable: false,align: 'center', width: '40%', filterable: {show: false} },
+			        { text: 'Zip Code', value: 'ZipCodes',align: 'center', width: '10%', filterable: {show: false} }
 			      ],
-			      items: []}
+			      items: [],
+			      provinces: [ 'Alberta',
+					            'British Columbia',
+					            'Manitoba',
+					            'New Brunswick',
+					            'Newfoundland and Labrador',
+					            'Nova Scotia',
+					            'Ontario',
+					            'Prince Edward Island',
+					            'Quebec',
+					            'Saskatchewan',
+					            'Northwest Territories',
+					            'Nunavut',
+					            'Yukon']
+					        }
 		    },
 		methods: {
 			    getData: function(){
 			      	var futureDataUrl  = 'data/future.json';
 			        var vm = this;
+			        vm.loading=true; 
                 	$.get(futureDataUrl, function(data){ 
 		                    vm.items = data;
 		                    console.log('loading futurpreneur');
-                    }, 'json');                                         
+                    }, 'json');
+                    vm.loading=false;                                         
 			      }
 			  	},
 		   created: function(){
@@ -70,12 +81,12 @@
 		          drawer: null,
 			      search: '',
 			      headers: [
-			        { text: 'Organization', value: 'Organization' },
-			        { text: 'Province', value: 'Province' },
-			        { text: 'Relevance', value: 'Relevance' },
-			        { text: 'Branch', value: 'Branch' },
-			        { text: 'Website Support', value: 'WebsiteSupport' },
-			        { text: 'List of Services Provided', value: 'ListofServicesProvided' }
+			        { text: 'Organization', value: 'Organization', align: 'center', width: '15%' },
+			        { text: 'Province', value: 'Province', align: 'center', width: '12%' },
+			        { text: 'Relevance', value: 'Relevance', align: 'center', width: '12%' },
+			        { text: 'Branch', value: 'Branch', align: 'center', width: '12%' },
+			        { text: 'Website Support', value: 'WebsiteSupport',sortable: false, align: 'center', width: '20%' },
+			        { text: 'List of Services Provided', value: 'ListofServicesProvided',sortable: false, align: 'center', width: '29%' }
 			      ],
 			      items: []
 			  }
@@ -101,11 +112,11 @@
 		          drawer: null,
 			      search: '',
 			      headers: [
-			        { text: 'Organization', value: 'Organization' },
-			        { text: 'Province', value: 'Province' },
-			        { text: 'Relevance', value: 'Relevance' },
-			        { text: 'Website Support', value: 'WebsiteSupport' },
-			        { text: 'Services', value: 'Services' }
+			        { text: 'Organization', value: 'Organization', align: 'center', width: '25%' },
+			        { text: 'Province', value: 'Province', align: 'center', width: '12%' },
+			        { text: 'Relevance', value: 'Relevance', align: 'center', width: '23%' },
+			        { text: 'Website Support', value: 'WebsiteSupport',sortable: false, align: 'center', width: '30%' },
+			        { text: 'Services', value: 'Services', align: 'center', width: '10%' }
 			      ],
 			      items: []}
 		    },
@@ -185,7 +196,7 @@
 			  router: router,
 			  data () {
 			    return {
-			      drawer: null,
+			      drawer: true,
 			      appTitle : appGlobalTitle
 			    }
 			  },

@@ -11,9 +11,8 @@
     <v-navigation-drawer
       fixed
       v-model="drawer"
-      app
-    >
-     <v-list dense>
+      app>
+    <v-list dense>
         <v-list-tile v-for="route in this.$router.options.routes" :key="route.name" :to="route.path">
             <v-list-tile-action>
                 <v-icon>{{ route.icon }}</v-icon>
@@ -36,8 +35,6 @@
     </v-footer>
   </v-app>
 </div>
-
-
 <template id="howtoopen-template">
     <v-stepper v-model="e1">
       <v-stepper-header>
@@ -65,8 +62,8 @@
                     <p class="formore required">Every business that has employees needs to register to the Workers Insurance Safety Board (WISB)</p>
                     <p class="forfurther">For further information about WISB and its benefits please visit:
                         <a href="http://www.wsib.on.ca">The Workplace Safety and Insurance Board</a></p>
-                    <p class="formore requiredmore">Any business that generates more than $30,000.00 in annual taxable sales has to register for HST 
-                        For further information about HST please visit:
+                    <p class="formore requiredmore">Any business that generates more than $30,000.00 in annual taxable sales has to register for HST</p>
+                        <p class="forfurther">For further information about HST please visit:
                                 <a href="https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/register-a-gst-hst-account.html">Register for a GST/HST account</a> </p></li>
                 </ol>
             </v-card>
@@ -105,19 +102,6 @@
                                 </p>
                             </li>
                             <li><p>Complete a partnership agreement - Some basic needs in a partnership agreement:</p>
-                                <ol class="abclatin">
-                                    <li><p><b>EFFECTIVE DATE</b> of the agreement</p></li>
-                                    <li><p>Each partners <b>FINANCIAL CONTRIBUTION</b> must be clear and written down</p></li>
-                                    <li><p>Divide and specify each of the <b>PARTNERS ROLE</b> in the company</p></li>
-                                    <li><p>How will partners <b>DRAW INCOME</b> from profits as parts of a salary, and how often</p></li>
-                                    <li><p>Define what <b>PROPERTY</b> belongs to the partnership</p></li>
-                                    <li><p>How will this property be <b>USED</b> by the individual partners</p></li>
-                                    <li><p>How will the <b>BANK ACCOUNTS</b> be set up, and how will <b>TAX MATTER</b>S be controlled</p></li>
-                                    <li><p>Define how <b>DISPUTES</b> will be resolved</p></li>
-                                    <li><p>Plan ahead in case a partner <b>DECEASES</b> or becomes <b>DISABLED</b>, and how will this affect the partnership</p></li>
-                                    <li><p>Establishing an <b>EXIT STRATEGY</b> in case a partner wants to leave the partnership</p></li>
-                                    <li><p>Stipulating a <b>SELLING</b> strategy in case the business is decided to be sold</p></li>
-                                </ol>
                             </li>
                             <li><p>Open a Bank Account - Typically a Bank in Canada will require the following documents to open an account for a Partnership or Limited Partnership:</p>
                                 <ol class="abclatin">
@@ -155,7 +139,6 @@
           <v-card color="grey lighten-4" class="mb-5" height="400px">
           	<ol class="main-step">
                             <li><p>Select Corporate Jurisdiction - Federal or Provincial</p> 
-                                <p>The main difference between the federal and provincial incorporation is that federal incorporation gives your business amplified business name protection and wider rights. Federal incorporation of your business means that you will be enabled to conduct business across all Canada under one business name, even if some other company is already using the same name in some province or territory. Federal incorporations also may cost more.</p>
                             </li>
                             <li><p>Complete articles of Incorporation - Incorporation is a form of business ownership that creates a distinct legal entity separate from its owners (shareholders).</p>
                                 <p class="formore">For more information on the steps to complete articles of incorporation please visit:
@@ -170,24 +153,8 @@
                             <li><p>Purchase Corporate Seal & Minute Book</p></li>
                             <li><p>Complete Corporate By-Laws, Organizational Minutes & Issue Shares - Seek Legal Advisory</p></li>
                             <li><p>Obtain other permits & licenses</p>
-                                <p>Permits and licences vary in each province and municipality; depending on the industry sector of your business, municipal government will require different regulations and/or obligations to be complied with. 
-                                Search to find out which ones may apply to your business:
-                                <a href="https://canadabusiness.ca/government/permits-and-licences/">Permits and licences</a></p>
                             </li>
                             <li><p>Open Bank Accounts</p>
-                                <p>The required documents may vary depending on the type of company. To open a Corporate Bank Account, commonly the following might be some of the required documents, depending on the bank, some may petition for other types of documentation:</p>
-                                    <ul class="abclatin">
-                                        <li><p>Two pieces of identification of those who will be the corporation's signing authorities</p></li>
-                                        <li><p>Articles of Incorporation/ Association</p></li>
-                                        <li><p>Certificate of Status</p></li>
-                                        <li><p>Corporate Profile Report</p></li>
-                                        <li><p>Certificate of Existence</p></li>
-                                        <li><p>Certificate of Compliance</p></li>
-                                        <li><p>Corporate Annual Government Filing</p></li>
-                                        <li><p>Notice of Assessment for Income Tax</p></li>
-                                        <li><p>Business Number</p></li>
-                                        <li><p>Business License</p></li>
-                                    </ul>
                             </li>
                             <li><p>Begin Operations</p>
                                 <p class="formore">**For further information about Corporations please visit:
@@ -209,7 +176,10 @@
 	          justify-center
 	          align-center
 	        >
-	          <v-flex text-xs-center>
+	          <v-flex text-xs-left>
+	          	<v-btn fab dark small color="teal">
+        <v-icon dark>location_on</v-icon>
+      </v-btn>
 	          	<v-card>
 			      <v-card-title>
 			        You can use search
@@ -227,18 +197,34 @@
 				      :items="items"
 				      :search="search"
 				      class="elevation-1"
+				      :loading="loading"
 				    >
+				    <template slot="headerCell" slot-scope="props">
+				        <span class="txt-header">{{ props.header.text }} </span>
+				        <v-menu bottom offset-y @click.native.stop>
+				          <a slot="activator"><i class="material-icons">menu</i></a>
+				          <v-list class="menu-filter">
+				            <v-list-tile @click.stop="" style="width:250px;">
+				               <v-form class="wfull">
+				                 <v-select
+				                  :items="provinces"
+				                  v-model="props.header.filterable.value"
+				                  label="Select"
+				                  autocomplete
+					              clearable
+					              single-line
+				                  bottom 
+				                 ></v-select>
+				                </v-form>
+				            </v-list-tile>
+				          </v-list>
+				        </v-menu>
+				      </template>
 					     <template slot="items" slot-scope="props">
-				          <td class="text-xs-right">{{ props.item.Province }}</td>
-				          <td class="text-xs-right">{{ props.item.Partners }}</td>
-				          <td class="text-xs-right">{{ props.item.WebsiteSupport }}</td>
-				          <td class="text-xs-right">{{ props.item.ZipCodes }}</td>
-				          <td class="text-xs-right">{{ props.item.C1 }}</td>
-				          <td class="text-xs-right">{{ props.item.C2 }}</td>
-				          <td class="text-xs-right">{{ props.item.C3 }}</td>
-				          <td class="text-xs-right">{{ props.item.C4 }}</td>
-				          <td class="text-xs-right">{{ props.item.C5 }}</td>
-				          <td class="text-xs-right">{{ props.item.C6 }}</td>
+				          <td class="text-xs-center">{{ props.item.Province }}</td>
+				          <td class="text-xs-center">{{ props.item.Partners }}</td>
+				          <td class="text-xs-center"><a v-bind:href="props.item.WebsiteSupport">{{ props.item.WebsiteSupport }}</a></td>
+				          <td class="text-xs-center">{{ props.item.ZipCodes }}</td>
 					      </template>
 					      <v-alert slot="no-results" :value="true" color="error" icon="warning">
 					          Your search for "{{ search }}" found no results.
@@ -275,10 +261,10 @@
 				      class="elevation-1"
 				    >
 					     <template slot="items" slot-scope="props">
-				          <td class="text-xs-right">{{ props.item.Organization }}</td>
-				          <td class="text-xs-right">{{ props.item.Province }}</td>
-				          <td class="text-xs-right">{{ props.item.Relevance }}</td>
-				          <td class="text-xs-right">{{ props.item.WebsiteSupport }}</td>
+				          <td class="text-xs-center">{{ props.item.Organization }}</td>
+				          <td class="text-xs-center">{{ props.item.Province }}</td>
+				          <td class="text-xs-center">{{ props.item.Relevance }}</td>
+				          <td class="text-xs-left"><a v-bind:href="props.item.WebsiteSupport">{{ props.item.WebsiteSupport }}</a></td>
 				          <td class="text-xs-right">{{ props.item.Services }}</td>
 					      </template>
 					      <v-alert slot="no-results" :value="true" color="error" icon="warning">
@@ -316,12 +302,12 @@
 				      class="elevation-1"
 				    >
 					     <template slot="items" slot-scope="props">
-				          <td class="text-xs-right">{{ props.item.Organization }}</td>
-				          <td class="text-xs-right">{{ props.item.Province }}</td>
-				          <td class="text-xs-right">{{ props.item.Relevance }}</td>
-				          <td class="text-xs-right">{{ props.item.Branch }}</td>
-				          <td class="text-xs-right">{{ props.item.WebsiteSupport }}</td>
-				          <td class="text-xs-right">{{ props.item.ListofServicesProvided }}</td>
+				          <td class="text-xs-left">{{ props.item.Organization }}</td>
+				          <td class="text-xs-center">{{ props.item.Province }}</td>
+				          <td class="text-xs-center">{{ props.item.Relevance }}</td>
+				          <td class="text-xs-center">{{ props.item.Branch }}</td>
+				          <td class="text-xs-left"><a v-bind:href="props.item.WebsiteSupport">{{ props.item.WebsiteSupport }}</a></td>
+				          <td class="text-xs-center">{{ props.item.ListofServicesProvided }}</td>
 					      </template>
 					      <v-alert slot="no-results" :value="true" color="error" icon="warning">
 					          Your search for "{{ search }}" found no results.
@@ -331,25 +317,97 @@
 	        </v-layout>
 	      </v-container>
 </template>
-
-
+<template id="home-template">
+           <v-card>
+        <v-container
+          fluid
+          style="min-height: 0;"
+          grid-list-lg
+        >
+          <v-layout row wrap>
+         <v-flex xs4 v-for="i in 3" :key="`4${i}`">
+          <v-card dark color="grey lighten-4">
+            <v-card-text class="px-0">4</v-card-text>
+          </v-card>
+        </v-flex>
+            <v-flex xs12>
+              <v-card color="blue lighten-5" class="white--text">
+                <v-card-title primary-title>
+                  <div class="headline">Unlimited music now</div>
+                  <div>Listen to your favorite artists and albums whenever and wherever, online and offline.</div>
+                </v-card-title>
+                <v-card-actions>
+                  <v-btn flat dark>Listen now</v-btn>
+                </v-card-actions>
+              </v-card>
+            </v-flex>
+            <v-flex xs12>
+              <v-card color="grey lighten-4" class="white--text">
+                <v-container fluid grid-list-lg>
+                  <v-layout row>
+                    <v-flex xs7>
+                      <div>
+                        <div class="headline">Supermodel</div>
+                        <div>Foster the People</div>
+                      </div>
+                    </v-flex>
+                    <v-flex xs5>
+                      <v-card-media
+                        src="https://vuetifyjs.com/static/doc-images/cards/foster.jpg"
+                        height="125px"
+                        contain
+                      ></v-card-media>
+                    </v-flex>
+                  </v-layout>
+                </v-container>
+              </v-card>
+            </v-flex>
+            <v-flex xs12>
+              <v-card color="blue lighten-5" class="white--text">
+                <v-container fluid grid-list-lg>
+                  <v-layout row>
+                    <v-flex xs7>
+                      <div>
+                        <div class="headline">Halycon Days</div>
+                        <div>Ellie Goulding</div>
+                      </div>
+                    </v-flex>
+                    <v-flex xs5>
+                      <v-card-media
+                        src="https://vuetifyjs.com/static/doc-images/cards/halcyon.png"
+                        height="125px"
+                        contain
+                      ></v-card-media>
+                    </v-flex>
+                  </v-layout>
+                </v-container>
+              </v-card>
+            </v-flex>
+          </v-layout>
+        </v-container>
+      </v-card>
+          </template>
   <script src="https://unpkg.com/vue/dist/vue.js"></script>
   <script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
   <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="js/table.js"></script>
  <style type="text/css">
+ table {
+    table-layout: fixed;
+    word-wrap: break-word;
+}
 .formore
 {
     text-indent: 5rem;
     font-family: proxima-nova, sans-serif !important;
     font-style: normal;
-    font-size: 12px;
+    font-size: 0.7em;
     font-weight:400;
     letter-spacing: 1px;
     color: #231f20;
     text-transform: ;
-    line-height: 1em;
+    line-height: 0.7em;
 }
 .forfurther
 {
@@ -357,12 +415,12 @@
     text-indent: 5rem;
     font-family:proxima-nova, sans-serif !important;
     font-style: normal;
-    font-size: 10px;
+    font-size: 0.7em;
     font-weight:600;
     letter-spacing: 0.5px;
     color: #231f20;
     text-transform: uppercase;
-    line-height: 1.5em;
+    line-height: 0.7em;
 }
 .main-step
 {
@@ -394,19 +452,19 @@ li p {
   font-weight:bold;
 }
 ol {
-  /*font: italic 1em Georgia, Times, serif;*/
-  font-size: 1em;
+  font: normal Arial, Helvetica, sans-serif;
+  font-size: 2em;
   color: #999999;
 }
 ol .abclatin{
     list-style-type:lower-latin;
-    font-size: 1em;
+    font-size: 1.5em;
     line-height: 0.5em;
     padding-left: 5em;
 }
 ol .roman{
     list-style-type:lower-roman;
-    font-size: 1em;
+    font-size: 1.5em;
     line-height: 0.5em;
     padding-left: 10em;
 }
