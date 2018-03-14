@@ -177,7 +177,7 @@
 	          align-center
 	        >
 	          <v-flex text-xs-left>
-	          	<v-btn fab dark small color="teal">
+	          	<v-btn fab dark small color="teal" @click.stop="dialog = true">
         <v-icon dark>location_on</v-icon>
       </v-btn>
 	          	<v-card>
@@ -231,8 +231,32 @@
 					       </v-alert>
 					    </v-data-table>
 	          </v-flex>
-	        </v-layout>
-	      </v-container>
+	              <v-dialog
+			          v-model="dialog"
+			          fullscreen
+			          transition="dialog-bottom-transition"
+			          :overlay="false"
+			          scrollable
+			        >
+          			<v-card tile>
+		            <v-toolbar card dark color="primary">
+		              <v-btn icon @click.native="dialog = false" dark>
+		                <v-icon>close</v-icon>
+		              </v-btn>
+		              <v-toolbar-title>Additional Support location map</v-toolbar-title>
+		            </v-toolbar>
+		            <v-card-text>      
+		              <v-divider></v-divider>
+		              <v-list three-line subheader>
+		                <v-subheader>General</v-subheader>
+		              </v-list>
+		            </v-card-text>
+		  
+		            <div style="flex: 1 1 auto;"/>
+		          </v-card>
+		        </v-dialog>
+		</v-layout>
+	</v-container>
 </template>
 
 <template id="government-template">
@@ -327,33 +351,37 @@
           <v-layout row wrap>
          <v-flex xs4 v-for="i in 3" :key="`4${i}`">
           <v-card dark color="grey lighten-4">
-            <v-card-text class="px-0">4</v-card-text>
+            <v-card-text class="px-0 black--text">Total number</v-card-text>
           </v-card>
         </v-flex>
             <v-flex xs12>
-              <v-card color="blue lighten-5" class="white--text">
-                <v-card-title primary-title>
-                  <div class="headline">Unlimited music now</div>
-                  <div>Listen to your favorite artists and albums whenever and wherever, online and offline.</div>
-                </v-card-title>
+              <v-card color="grey lighten-4" class="black--text">
+              	<v-container fluid grid-list-lg>
+                  <v-layout row>
+                    <v-flex xs7>
+                      <div>
+                  <div class="headline">Collaborators - Allies - Competitors</div>
+                  <div>Total:</div>
                 <v-card-actions>
-                  <v-btn flat dark>Listen now</v-btn>
+                  <v-btn flat dark class="black--text">Show</v-btn>
                 </v-card-actions>
+                 </div>
+                    </v-flex>
               </v-card>
             </v-flex>
             <v-flex xs12>
-              <v-card color="grey lighten-4" class="white--text">
+              <v-card color="grey lighten-4" class="black--text">
                 <v-container fluid grid-list-lg>
                   <v-layout row>
                     <v-flex xs7>
                       <div>
-                        <div class="headline">Supermodel</div>
-                        <div>Foster the People</div>
+                        <div class="headline">Number of Futurepreneur Partners</div>
+                        <div>Total:</div>
                       </div>
                     </v-flex>
                     <v-flex xs5>
                       <v-card-media
-                        src="https://vuetifyjs.com/static/doc-images/cards/foster.jpg"
+                        src="http://www.newdesignfile.com/postpic/2013/05/graph-line-chart-icon_359792.png"
                         height="125px"
                         contain
                       ></v-card-media>
@@ -363,18 +391,18 @@
               </v-card>
             </v-flex>
             <v-flex xs12>
-              <v-card color="blue lighten-5" class="white--text">
+              <v-card color="grey lighten-4" class="black--text">
                 <v-container fluid grid-list-lg>
                   <v-layout row>
                     <v-flex xs7>
                       <div>
-                        <div class="headline">Halycon Days</div>
-                        <div>Ellie Goulding</div>
+                        <div class="headline">Number of Governmental Supports</div>
+                        <div>Total:</div>
                       </div>
                     </v-flex>
                     <v-flex xs5>
                       <v-card-media
-                        src="https://vuetifyjs.com/static/doc-images/cards/halcyon.png"
+                        src="http://www.newdesignfile.com/postpic/2013/05/graph-line-chart-icon_359792.png"
                         height="125px"
                         contain
                       ></v-card-media>

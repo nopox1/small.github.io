@@ -22,6 +22,7 @@
 		        return { 
 		          drawer: true,
 			      search: '',
+			      dialog: false,
 			      loading: true,
 			      headers: [
 			      /*  {
@@ -146,7 +147,7 @@
 					  {
 					      path: '/',
 					      icon: 'home',
-					      name: 'Home',
+					      name: 'Dashboard',
 					      component: Home
 					  },
 					  {
@@ -164,7 +165,7 @@
 					 {
 					      path: '/futurpreneur',
 					      icon: 'domain',
-					      name: 'Futurpreneur',
+					      name: 'Additional Support',
 					      component: FuturpreneurList
 					  },
 					  {
@@ -176,7 +177,7 @@
 				]
 		});	
    
-        var appGlobalTitle = 'Home';  
+        var appGlobalTitle = '';  
 
 		/*router.beforeEach((to, from, next) => {
 			console.log(to);
