@@ -1,3 +1,20 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function setCookie(key, value) {
     var expires = new Date();
     expires.setTime(expires.getTime() + (1 * 24 * 60 * 60 * 1000));
@@ -21,13 +38,6 @@ function findInArray(Array, component) {
                 }
             });
         });
-}
-
-function getArrayFromJson(url) {
-    return $.ajax({
-        url: url,
-        dataType: 'json'
-    });
 }
 
 function findCategory(categoryName) {

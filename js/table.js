@@ -7,13 +7,16 @@
 		    }
 		}
 	}	
-	const Home = {
-		  props: ['hello'],
-		  template: '#home-template'
+
+	const Survey = {
+		  template: '#survey-template',
+		  data:  function () {
+        		 return { survey: survey }
+    		}
 		}
 
     const Dashboard = {
-	  template: 'Look at Dashboard'
+	  template: '#home-template'
 	}
 
 	const FuturpreneurList = {
@@ -25,12 +28,6 @@
 			      dialog: false,
 			      loading: true,
 			      headers: [
-			      /*  {
-			          text: 'Dessert (100g serving)',
-			          align: 'left',
-			          sortable: false,
-			          value: 'name'
-			        },*/
 			        { text: 'Province', value: 'Province', align: 'center', width: '20%', filterable: {show: false}},
 			        { text: 'Partner', value: 'Partners', align: 'center', width: '30%', filterable: {show: false} },
 			        { text: 'Website', value: 'WebsiteSupport', sortable: false,align: 'center', width: '40%', filterable: {show: false} },
@@ -148,30 +145,36 @@
 					      path: '/',
 					      icon: 'home',
 					      name: 'Dashboard',
-					      component: Home
+					      component: Dashboard
+					  },
+					  {
+					      path: '/survey',
+					      icon: 'business_center',
+					      name: 'Self-assessment questionnaire',
+					      component: Survey
 					  },
 					  {
 					      path: '/howtoopen',
 					      icon: 'looks_one',
-					      name: 'How to open business',
+					      name: 'What should I do to start my own business?',
 					      component: HowToOpen
 					  },
-					  {
+					  /*{
 					      path: '/collaborators',
 					      icon: 'business_center',
 					      name: 'Collaborators',
 					      component: CollaboratorsList
-					  },
+					  },*/
 					 {
 					      path: '/futurpreneur',
 					      icon: 'domain',
-					      name: 'Additional Support',
+					      name: 'Where can i get additional Support',
 					      component: FuturpreneurList
 					  },
 					  {
 					      path: '/government',
 					      icon: 'monetization_one',
-					      name: 'Government grants/loans',
+					      name: 'What grants/loans are avaliable',
 					      component: GovernmentList
 					  }
 				]
@@ -192,13 +195,15 @@
    // DOM updated
   //})
 
+
 	new Vue({
 			  el: '#app',
 			  router: router,
 			  data () {
 			    return {
 			      drawer: true,
-			      appTitle : appGlobalTitle
+			      appTitle : appGlobalTitle,
+			      survey: survey
 			    }
 			  },
 			watch: {
@@ -208,8 +213,5 @@
     				this.appTitle = this.$route.name;
       				console.log(this.appTitle);
     			}
-  			},
-  			mounted(){
-    		  console.log("mounted");
   			}
 			});

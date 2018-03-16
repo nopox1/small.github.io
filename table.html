@@ -2,7 +2,8 @@
 <html>
 <head>
   <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
-    <link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet">
+  <link href="https://surveyjs.azureedge.net/1.0.14/survey.css" type="text/css" rel="stylesheet"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
 <body>
@@ -414,11 +415,26 @@
           </v-layout>
         </v-container>
       </v-card>
-          </template>
-  <script src="https://unpkg.com/vue/dist/vue.js"></script>
-  <script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
-  <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    </template>
+<template id="survey-template">
+    <v-container grid-list-md text-xs-left>
+      <v-layout row wrap>
+        <v-flex xs12>
+            <div id="surveyElement">
+                <survey :survey='survey' />
+            </div>
+            <div id="surveyResult"></div>
+          </v-flex>
+         </v-layout>
+        </v-container>
+      </v-card>
+    </template>
+  <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+  <script src="https://unpkg.com/vuetify/dist/vuetify.min.js"></script>
+  <script src="https://unpkg.com/vue-router/dist/vue-router.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://surveyjs.azureedge.net/1.0.14/survey.vue.min.js"></script>
+  <script src="js/survey.js"></script>    
   <script src="js/table.js"></script>
  <style type="text/css">
  table {
