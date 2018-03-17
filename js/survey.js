@@ -7,6 +7,14 @@ var surveyJSON = {title:"CULTURAL ECONOMIC DRIVER IDEA EVALUATION", completedHtm
 console.log("surveyJSON");
 window.survey = new Survey.Model(surveyJSON);
 
+const SurveyPage = {
+	//template: '#survey-template',
+	template: '<v-container grid-list-md text-xs-left><v-layout row wrap><v-flex xs12><div id="surveyElement"><survey :survey=\'survey\' /></div><div id="surveyResult"></div></v-flex></v-layout></v-container></v-card>',
+	data:  function () {
+		   return { survey: survey }
+	  }
+  }
+
 function startNew() {
 	  document
             .querySelector('#surveyResult')

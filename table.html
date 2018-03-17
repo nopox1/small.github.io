@@ -261,12 +261,9 @@
 </template>
 
 <template id="government-template">
-	<v-container fluid fill-height>
-	        <v-layout
-	          justify-center
-	          align-center
-	        >
-	          <v-flex text-xs-center>
+    <v-container grid-list-md text-xs-left>
+      <v-layout row wrap>
+        <v-flex xs12>
 	          	<v-card>
 			      <v-card-title>
 			        You can use search
@@ -362,7 +359,7 @@
                     <v-flex xs7>
                       <div>
                   <div class="headline">Collaborators - Allies - Competitors</div>
-                  <div>Total:</div>
+                  <div>Lorem ipsum dolor sit amet, mel at clita quando. Te sit oratio vituperatoribus, nam ad ipsum posidonium mediocritatem, explicari dissentiunt cu mea. Repudiare disputationi vim in, mollis iriure nec cu, alienum argumentum ius ad. Pri eu justo aeque torquatos.</div>
                 <v-card-actions>
                   <v-btn flat dark class="black--text">Show</v-btn>
                 </v-card-actions>
@@ -377,7 +374,7 @@
                     <v-flex xs7>
                       <div>
                         <div class="headline">Number of Futurepreneur Partners</div>
-                        <div>Total:</div>
+                        <div>Lorem ipsum dolor sit amet, mel at clita quando. Te sit oratio vituperatoribus, nam ad ipsum posidonium mediocritatem, explicari dissentiunt cu mea. Repudiare disputationi vim in, mollis iriure nec cu, alienum argumentum ius ad. Pri eu justo aeque torquatos.</div>
                       </div>
                     </v-flex>
                     <v-flex xs5>
@@ -398,7 +395,7 @@
                     <v-flex xs7>
                       <div>
                         <div class="headline">Number of Governmental Supports</div>
-                        <div>Total:</div>
+                        <div>Lorem ipsum dolor sit amet, mel at clita quando. Te sit oratio vituperatoribus, nam ad ipsum posidonium mediocritatem, explicari dissentiunt cu mea. Repudiare disputationi vim in, mollis iriure nec cu, alienum argumentum ius ad. Pri eu justo aeque torquatos.</div>
                       </div>
                     </v-flex>
                     <v-flex xs5>
@@ -416,26 +413,16 @@
         </v-container>
       </v-card>
     </template>
-<template id="survey-template">
-    <v-container grid-list-md text-xs-left>
-      <v-layout row wrap>
-        <v-flex xs12>
-            <div id="surveyElement">
-                <survey :survey='survey' />
-            </div>
-            <div id="surveyResult"></div>
-          </v-flex>
-         </v-layout>
-        </v-container>
-      </v-card>
-    </template>
+  <SurveyPage></SurveyPage>
   <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
   <script src="https://unpkg.com/vuetify/dist/vuetify.min.js"></script>
   <script src="https://unpkg.com/vue-router/dist/vue-router.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://surveyjs.azureedge.net/1.0.14/survey.vue.min.js"></script>
+
   <script src="js/survey.js"></script>    
   <script src="js/table.js"></script>
+  <script src="js/main.js"></script> 
  <style type="text/css">
  table {
     table-layout: fixed;
