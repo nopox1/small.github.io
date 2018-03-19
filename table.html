@@ -1,42 +1,41 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
   <link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet">
-  <link href="https://surveyjs.azureedge.net/1.0.14/survey.css" type="text/css" rel="stylesheet"/>
+  <link href="https://surveyjs.azureedge.net/1.0.14/survey.css" type="text/css" rel="stylesheet" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
+
 <body>
-<div id="app">
-  <v-app id="inspire">
-    <v-navigation-drawer
-      fixed
-      v-model="drawer"
-      app>
-    <v-list dense>
-        <v-list-tile v-for="route in this.$router.options.routes" :key="route.name" :to="route.path">
+  <div id="app">
+    <v-app id="inspire">
+      <v-navigation-drawer fixed v-model="drawer" app>
+        <v-list dense>
+          <v-list-tile v-for="route in this.$router.options.routes" :key="route.name" :to="route.path">
             <v-list-tile-action>
-                <v-icon>{{ route.icon }}</v-icon>
+              <v-icon>{{ route.icon }}</v-icon>
             </v-list-tile-action>
             <v-list-tile-content>
-                <v-list-tile-title>{{ route.name }}</v-list-tile-title>
+              <v-list-tile-title>{{ route.name }}</v-list-tile-title>
             </v-list-tile-content>
-        </v-list-tile>
-      </v-list>
-    </v-navigation-drawer>
-    <v-toolbar color="indigo" dark fixed app>
-      <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-      <v-toolbar-title>{{ appTitle }}</v-toolbar-title>
-    </v-toolbar>
-    <v-content>
-		<router-view></router-view>
-    </v-content>
-    <v-footer color="indigo" app>
-      <span class="white--text">&copy; 2018</span>
-    </v-footer>
-  </v-app>
-</div>
-<template id="howtoopen-template">
+          </v-list-tile>
+        </v-list>
+      </v-navigation-drawer>
+      <v-toolbar color="indigo" dark fixed app>
+        <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+        <v-toolbar-title>{{ appTitle }}</v-toolbar-title>
+      </v-toolbar>
+      <v-content>
+        <router-view></router-view>
+      </v-content>
+      <v-footer color="indigo" app>
+        <span class="white--text">&copy; 2018</span>
+      </v-footer>
+    </v-app>
+  </div>
+  <template id="howtoopen-template">
     <v-stepper v-model="e1">
       <v-stepper-header>
         <v-stepper-step step="1" :complete="e1 > 1">General steps</v-stepper-step>
@@ -50,455 +49,468 @@
       <v-stepper-items>
         <v-stepper-content step="1">
           <v-card color="grey lighten-4" class="mb-5" height="400px">
-          	<ol class="main-step">
-                <li><p>Determine your type of business - Different businesses have different requirements</p></li>
-                <li><p>Select your Business Structure - Sole Proprietorship / Partnership / Corporation</p></li>
-                <li><p>Create a Business Name</p></li>
-                <li><p>Determine Availability of your Business Name - Primarily perform a search through public information sources; you will also need a Nuans report for most provincial and territorial governments.</p>
-                    <p class="formore">For more information on a Nuans report please visit:
-                        <a href="https://www.nuans.com/auth/app/scr/corp/nuans/public/PreSearch.html?lang=eng">Order a Nuans report - Nuans</a></p></li>
-                <li><p>Register your Business Name</p>
-                    <p class="formore">For more information on Business Name Registration please visit:
-                        <a href="https://www.canada.ca/en/services/business/start/choosing-a-business-name-3.html">Register your name</a></p>
-                    <p class="formore required">Every business that has employees needs to register to the Workers Insurance Safety Board (WISB)</p>
-                    <p class="forfurther">For further information about WISB and its benefits please visit:
-                        <a href="http://www.wsib.on.ca">The Workplace Safety and Insurance Board</a></p>
-                    <p class="formore requiredmore">Any business that generates more than $30,000.00 in annual taxable sales has to register for HST</p>
-                        <p class="forfurther">For further information about HST please visit:
-                                <a href="https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/register-a-gst-hst-account.html">Register for a GST/HST account</a> </p></li>
-                </ol>
-            </v-card>
+            <ol class="main-step">
+              <li>
+                <p>Determine your type of business - Different businesses have different requirements</p>
+              </li>
+              <li>
+                <p>Select your Business Structure - Sole Proprietorship / Partnership / Corporation</p>
+              </li>
+              <li>
+                <p>Create a Business Name</p>
+              </li>
+              <li>
+                <p>Determine Availability of your Business Name - Primarily perform a search through public information sources;
+                  you will also need a Nuans report for most provincial and territorial governments.</p>
+                <p class="formore">For more information on a Nuans report please visit:
+                  <a href="https://www.nuans.com/auth/app/scr/corp/nuans/public/PreSearch.html?lang=eng">Order a Nuans report - Nuans</a>
+                </p>
+              </li>
+              <li>
+                <p>Register your Business Name</p>
+                <p class="formore">For more information on Business Name Registration please visit:
+                  <a href="https://www.canada.ca/en/services/business/start/choosing-a-business-name-3.html">Register your name</a>
+                </p>
+                <p class="formore required">Every business that has employees needs to register to the Workers Insurance Safety Board (WISB)</p>
+                <p class="forfurther">For further information about WISB and its benefits please visit:
+                  <a href="http://www.wsib.on.ca">The Workplace Safety and Insurance Board</a>
+                </p>
+                <p class="formore requiredmore">Any business that generates more than $30,000.00 in annual taxable sales has to register for HST</p>
+                <p class="forfurther">For further information about HST please visit:
+                  <a href="https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/register-a-gst-hst-account.html">Register for a GST/HST account</a>
+                </p>
+              </li>
+            </ol>
+          </v-card>
           <v-btn color="primary" @click.native="e1 = 2">Continue</v-btn>
         </v-stepper-content>
         <v-stepper-content step="2">
           <v-card color="grey lighten-4" class="mb-5" height="400px">
-          	<ol class="main-step">
-                <li><p>Register for permits, licenses and taxes</p>
-                    <p class="formore">For more information about different Permits and Licenses please visit:
-                        <a href="https://services.bizpal-perle.ca/?b=01">Business Permit and Licence Information</a>
-                    </p>    
-                </li> 
-                <li><p>Open a Bank Account</p>
-                    <ol class="abclatin">
-                        <li><p>If operating as an individual: bill your customers or clients in your own name.</p></li>
-                        <li><p>If operating under a registered business name: bill your clients and customers in the business's name.</p></li>
-                        <li><p>If your business has a name other than your own: Open a separate bank account to process cheques payable to your business.</p></li>
-                    </ol>
-                </li>
-                <li><p>Begin Operations!</p>
-                    <p class="formore required">For further information about Partnership agreement please visit:
-                        <a href="https://www.canada.ca/en/revenue-agency/services/tax/businesses/small-businesses-self-employed-income/setting-your-business/   sole-proprietorship.html">SOLE PROPRIETORSHIP</a>
-                    </p>  
-                </li>
+            <ol class="main-step">
+              <li>
+                <p>Register for permits, licenses and taxes</p>
+                <p class="formore">For more information about different Permits and Licenses please visit:
+                  <a href="https://services.bizpal-perle.ca/?b=01">Business Permit and Licence Information</a>
+                </p>
+              </li>
+              <li>
+                <p>Open a Bank Account</p>
+                <ol class="abclatin">
+                  <li>
+                    <p>If operating as an individual: bill your customers or clients in your own name.</p>
+                  </li>
+                  <li>
+                    <p>If operating under a registered business name: bill your clients and customers in the business's name.</p>
+                  </li>
+                  <li>
+                    <p>If your business has a name other than your own: Open a separate bank account to process cheques payable
+                      to your business.</p>
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <p>Begin Operations!</p>
+                <p class="formore required">For further information about Partnership agreement please visit:
+                  <a href="https://www.canada.ca/en/revenue-agency/services/tax/businesses/small-businesses-self-employed-income/setting-your-business/   sole-proprietorship.html">SOLE PROPRIETORSHIP</a>
+                </p>
+              </li>
             </ol>
           </v-card>
           <v-btn color="primary" @click.native="e1 = 3">Continue</v-btn>
         </v-stepper-content>
         <v-stepper-content step="3">
           <v-card color="grey lighten-4" class="mb-5" height="400px">
-          	<ol class="main-step">
-                            <li><p>Register for permits, licences, and taxes</p>
-                                <p class="formore">For more information about different Permits and Licenses please visit:
-                                    <a href="https://services.bizpal-perle.ca/?b=01">Business Permit and Licence Information</a>
-                                </p>
-                            </li>
-                            <li><p>Complete a partnership agreement - Some basic needs in a partnership agreement:</p>
-                            </li>
-                            <li><p>Open a Bank Account - Typically a Bank in Canada will require the following documents to open an account for a Partnership or Limited Partnership:</p>
-                                <ol class="abclatin">
-                                    <li><p>Business Owners Documents: Government issued photo identification of all partners</p></li>
-                                    <li><p>General Partnership:</p>
-                                        <ol class="roman">
-                                            <li><p>Registered declaration of partnership (if it applies)</p></li>
-                                            <li><p>Copy of partnership agreement (if it applies)</p></li>
-                                            <li><p>Trade name registration or master business license (if it applies)</p></li>
-                                        </ol>
-                                    </li>
-                                    <li><p>Limited Liability Partnership:</p>
-                                       <ol class="roman">
-                                            <li><p>Registered declaration of partnership</p></li>
-                                            <li><p>Trade name registration or master business licence (if it applies)</p></li>
-                                        </ol>
-                                    </li>
-                                    <li><p>Limited Partnership:</p>
-                                        <ol class="roman">
-                                            <li><p>Registered declaration of partnership</p></li>
-                                            <li><p>Trade name registration or master business licence (if it applies)</p></li>
-                                        </ol>
-                                    </li>
-                                </ol >
-                            </li>
-                            <li><p>Begin Operations!</p>
-                                <p class="formore">***For further information about Partnership agreement please visit:
-                                    <a href="https://www.canada.ca/en/revenue-agency/services/tax/businesses/small-businesses-self-employed-income/setting-your-business/partnership.html">Partnership</a></p>
-                            </li>
-                        </ol>
+            <ol class="main-step">
+              <li>
+                <p>Register for permits, licences, and taxes</p>
+                <p class="formore">For more information about different Permits and Licenses please visit:
+                  <a href="https://services.bizpal-perle.ca/?b=01">Business Permit and Licence Information</a>
+                </p>
+              </li>
+              <li>
+                <p>Complete a partnership agreement - Some basic needs in a partnership agreement:</p>
+              </li>
+              <li>
+                <p>Open a Bank Account - Typically a Bank in Canada will require the following documents to open an account
+                  for a Partnership or Limited Partnership:</p>
+                <ol class="abclatin">
+                  <li>
+                    <p>Business Owners Documents: Government issued photo identification of all partners</p>
+                  </li>
+                  <li>
+                    <p>General Partnership:</p>
+                    <ol class="roman">
+                      <li>
+                        <p>Registered declaration of partnership (if it applies)</p>
+                      </li>
+                      <li>
+                        <p>Copy of partnership agreement (if it applies)</p>
+                      </li>
+                      <li>
+                        <p>Trade name registration or master business license (if it applies)</p>
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    <p>Limited Liability Partnership:</p>
+                    <ol class="roman">
+                      <li>
+                        <p>Registered declaration of partnership</p>
+                      </li>
+                      <li>
+                        <p>Trade name registration or master business licence (if it applies)</p>
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    <p>Limited Partnership:</p>
+                    <ol class="roman">
+                      <li>
+                        <p>Registered declaration of partnership</p>
+                      </li>
+                      <li>
+                        <p>Trade name registration or master business licence (if it applies)</p>
+                      </li>
+                    </ol>
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <p>Begin Operations!</p>
+                <p class="formore">***For further information about Partnership agreement please visit:
+                  <a href="https://www.canada.ca/en/revenue-agency/services/tax/businesses/small-businesses-self-employed-income/setting-your-business/partnership.html">Partnership</a>
+                </p>
+              </li>
+            </ol>
           </v-card>
           <v-btn color="primary" @click.native="e1 = 4">Continue</v-btn>
         </v-stepper-content>
         <v-stepper-content step="4">
           <v-card color="grey lighten-4" class="mb-5" height="400px">
-          	<ol class="main-step">
-                            <li><p>Select Corporate Jurisdiction - Federal or Provincial</p> 
-                            </li>
-                            <li><p>Complete articles of Incorporation - Incorporation is a form of business ownership that creates a distinct legal entity separate from its owners (shareholders).</p>
-                                <p class="formore">For more information on the steps to complete articles of incorporation please visit:
-                                    <a href="https://www.ic.gc.ca/eic/site/cd-dgc.nsf/eng/cs04977.html">link</a>
-                                </p>
-                            </li>
-                            <li><p>Submit & Register Articles of Incorporation - Canadian legislation requires you to register your corporation in each province and territory in which it will conduct business.</p>
-                                <p class="formore">For further information on provincial and territorial registrar websites, please visit:
-                                    <a href="https://www.ic.gc.ca/eic/site/cd-dgc.nsf/eng/cs04578.html">link</a>
-                                </p>
-                            </li>
-                            <li><p>Purchase Corporate Seal & Minute Book</p></li>
-                            <li><p>Complete Corporate By-Laws, Organizational Minutes & Issue Shares - Seek Legal Advisory</p></li>
-                            <li><p>Obtain other permits & licenses</p>
-                            </li>
-                            <li><p>Open Bank Accounts</p>
-                            </li>
-                            <li><p>Begin Operations</p>
-                                <p class="formore">**For further information about Corporations please visit:
-                                   <a href="https://www.ic.gc.ca/eic/site/cd-dgc.nsf/eng/h_cs02193.html">link</a></p>
-                                   <p class="formore">*** For further information about Incorporation please visit:
-                                       <a href="https://www.ic.gc.ca/eic/site/cd-dgc.nsf/eng/cs06642.html">link</a></p>
-                            </li>
-                        </ol>
+            <ol class="main-step">
+              <li>
+                <p>Select Corporate Jurisdiction - Federal or Provincial</p>
+              </li>
+              <li>
+                <p>Complete articles of Incorporation - Incorporation is a form of business ownership that creates a distinct
+                  legal entity separate from its owners (shareholders).</p>
+                <p class="formore">For more information on the steps to complete articles of incorporation please visit:
+                  <a href="https://www.ic.gc.ca/eic/site/cd-dgc.nsf/eng/cs04977.html">link</a>
+                </p>
+              </li>
+              <li>
+                <p>Submit & Register Articles of Incorporation - Canadian legislation requires you to register your corporation
+                  in each province and territory in which it will conduct business.</p>
+                <p class="formore">For further information on provincial and territorial registrar websites, please visit:
+                  <a href="https://www.ic.gc.ca/eic/site/cd-dgc.nsf/eng/cs04578.html">link</a>
+                </p>
+              </li>
+              <li>
+                <p>Purchase Corporate Seal & Minute Book</p>
+              </li>
+              <li>
+                <p>Complete Corporate By-Laws, Organizational Minutes & Issue Shares - Seek Legal Advisory</p>
+              </li>
+              <li>
+                <p>Obtain other permits & licenses</p>
+              </li>
+              <li>
+                <p>Open Bank Accounts</p>
+              </li>
+              <li>
+                <p>Begin Operations</p>
+                <p class="formore">**For further information about Corporations please visit:
+                  <a href="https://www.ic.gc.ca/eic/site/cd-dgc.nsf/eng/h_cs02193.html">link</a>
+                </p>
+                <p class="formore">*** For further information about Incorporation please visit:
+                  <a href="https://www.ic.gc.ca/eic/site/cd-dgc.nsf/eng/cs06642.html">link</a>
+                </p>
+              </li>
+            </ol>
           </v-card>
           <v-btn color="primary" @click.native="e1 = 1">Continue</v-btn>
         </v-stepper-content>
       </v-stepper-items>
     </v-stepper>
-</template>
+  </template>
 
-<template id="futurpreneur-template">
-	<v-container fluid fill-height>
-	        <v-layout
-	          justify-center
-	          align-center
-	        >
-	          <v-flex text-xs-left>
-	          	<v-btn fab dark small color="teal" @click.stop="dialog = true">
-        <v-icon dark>location_on</v-icon>
-      </v-btn>
-	          	<v-card>
-			      <v-card-title>
-			        You can use search
-			        <v-spacer></v-spacer>
-			        <v-text-field
-			          append-icon="search"
-			          label="Search"
-			          single-line
-			          hide-details
-			          v-model="search"
-	        		></v-text-field>
-	      			</v-card-title>
-				    <v-data-table
-				      :headers="headers"
-				      :items="items"
-				      :search="search"
-				      class="elevation-1"
-				      :loading="loading"
-				    >
-				    <template slot="headerCell" slot-scope="props">
-				        <span class="txt-header">{{ props.header.text }} </span>
-				        <v-menu bottom offset-y @click.native.stop>
-				          <a slot="activator"><i class="material-icons">menu</i></a>
-				          <v-list class="menu-filter">
-				            <v-list-tile @click.stop="" style="width:250px;">
-				               <v-form class="wfull">
-				                 <v-select
-				                  :items="provinces"
-				                  v-model="props.header.filterable.value"
-				                  label="Select"
-				                  autocomplete
-					              clearable
-					              single-line
-				                  bottom 
-				                 ></v-select>
-				                </v-form>
-				            </v-list-tile>
-				          </v-list>
-				        </v-menu>
-				      </template>
-					     <template slot="items" slot-scope="props">
-				          <td class="text-xs-center">{{ props.item.Province }}</td>
-				          <td class="text-xs-center">{{ props.item.Partners }}</td>
-				          <td class="text-xs-center"><a v-bind:href="props.item.WebsiteSupport">{{ props.item.WebsiteSupport }}</a></td>
-				          <td class="text-xs-center">{{ props.item.ZipCodes }}</td>
-					      </template>
-					      <v-alert slot="no-results" :value="true" color="error" icon="warning">
-					          Your search for "{{ search }}" found no results.
-					       </v-alert>
-					    </v-data-table>
-	          </v-flex>
-	              <v-dialog
-			          v-model="dialog"
-			          fullscreen
-			          transition="dialog-bottom-transition"
-			          :overlay="false"
-			          scrollable
-			        >
-          			<v-card tile>
-		            <v-toolbar card dark color="primary">
-		              <v-btn icon @click.native="dialog = false" dark>
-		                <v-icon>close</v-icon>
-		              </v-btn>
-		              <v-toolbar-title>Additional Support location map</v-toolbar-title>
-		            </v-toolbar>
-		            <v-card-text>      
-		              <v-divider></v-divider>
-		              <v-list three-line subheader>
-		                <v-subheader>General</v-subheader>
-		              </v-list>
-		            </v-card-text>
-		  
-		            <div style="flex: 1 1 auto;"/>
-		          </v-card>
-		        </v-dialog>
-		</v-layout>
-	</v-container>
-</template>
+  <template id="futurpreneur-template">
+    <v-container fluid fill-height>
+      <v-layout justify-center align-center>
+        <v-flex text-xs-left>
+          <v-btn fab dark small color="teal" @click.stop="dialog = true">
+            <v-icon dark>location_on</v-icon>
+          </v-btn>
+          <v-card>
+            <v-card-title>
+              You can use search
+              <v-spacer></v-spacer>
+              <v-text-field append-icon="search" label="Search" single-line hide-details v-model="search"></v-text-field>
+            </v-card-title>
+            <v-data-table :headers="headers" :items="items" :search="search" class="elevation-1" :loading="loading">
+              <template slot="headerCell" slot-scope="props">
+                <span class="txt-header">{{ props.header.text }} </span>
+                <v-menu bottom offset-y @click.native.stop>
+                  <a slot="activator">
+                    <i class="material-icons">menu</i>
+                  </a>
+                  <v-list class="menu-filter">
+                    <v-list-tile @click.stop="" style="width:250px;">
+                      <v-form class="wfull">
+                        <v-select :items="provinces" v-model="props.header.filterable.value" label="Select" autocomplete clearable single-line bottom></v-select>
+                      </v-form>
+                    </v-list-tile>
+                  </v-list>
+                </v-menu>
+              </template>
+              <template slot="items" slot-scope="props">
+                <td class="text-xs-center">{{ props.item.Province }}</td>
+                <td class="text-xs-center">{{ props.item.Partners }}</td>
+                <td class="text-xs-center">
+                  <a v-bind:href="props.item.WebsiteSupport">{{ props.item.WebsiteSupport }}</a>
+                </td>
+                <td class="text-xs-center">{{ props.item.ZipCodes }}</td>
+              </template>
+              <v-alert slot="no-results" :value="true" color="error" icon="warning">
+                Your search for "{{ search }}" found no results.
+              </v-alert>
+            </v-data-table>
+        </v-flex>
+        <v-dialog v-model="dialog" fullscreen transition="dialog-bottom-transition" :overlay="false" scrollable>
+          <v-card tile>
+            <v-toolbar card dark color="primary">
+              <v-btn icon @click.native="dialog = false" dark>
+                <v-icon>close</v-icon>
+              </v-btn>
+              <v-toolbar-title>Additional Support location map</v-toolbar-title>
+            </v-toolbar>
 
-<template id="government-template">
+            <div style="flex: 1 1 auto;" />
+          </v-card>
+        </v-dialog>
+      </v-layout>
+    </v-container>
+  </template>
+
+  <template id="government-template">
     <v-container grid-list-md text-xs-left>
       <v-layout row wrap>
         <v-flex xs12>
-	          	<v-card>
-			      <v-card-title>
-			        You can use search
-			        <v-spacer></v-spacer>
-			        <v-text-field
-			          append-icon="search"
-			          label="Search"
-			          single-line
-			          hide-details
-			          v-model="search"
-	        		></v-text-field>
-	      			</v-card-title>
-				    <v-data-table
-				      :headers="headers"
-				      :items="items"
-				      :search="search"
-				      class="elevation-1"
-				    >
-					     <template slot="items" slot-scope="props">
-				          <td class="text-xs-center">{{ props.item.Organization }}</td>
-				          <td class="text-xs-center">{{ props.item.Province }}</td>
-				          <td class="text-xs-center">{{ props.item.Relevance }}</td>
-				          <td class="text-xs-left"><a v-bind:href="props.item.WebsiteSupport">{{ props.item.WebsiteSupport }}</a></td>
-				          <td class="text-xs-right">{{ props.item.Services }}</td>
-					      </template>
-					      <v-alert slot="no-results" :value="true" color="error" icon="warning">
-					          Your search for "{{ search }}" found no results.
-					       </v-alert>
-					    </v-data-table>
-	          </v-flex>
-	        </v-layout>
-	      </v-container>
-</template>
-
-<template id="collaborators-template">
-	<v-container fluid fill-height>
-	        <v-layout
-	          justify-center
-	          align-center
-	        >
-	          <v-flex text-xs-center>
-	          	<v-card>
-			      <v-card-title>
-			        You can use search
-			        <v-spacer></v-spacer>
-			        <v-text-field
-			          append-icon="search"
-			          label="Search"
-			          single-line
-			          hide-details
-			          v-model="search"
-	        		></v-text-field>
-	      			</v-card-title>
-				    <v-data-table
-				      :headers="headers"
-				      :items="items"
-				      :search="search"
-				      class="elevation-1"
-				    >
-					     <template slot="items" slot-scope="props">
-				          <td class="text-xs-left">{{ props.item.Organization }}</td>
-				          <td class="text-xs-center">{{ props.item.Province }}</td>
-				          <td class="text-xs-center">{{ props.item.Relevance }}</td>
-				          <td class="text-xs-center">{{ props.item.Branch }}</td>
-				          <td class="text-xs-left"><a v-bind:href="props.item.WebsiteSupport">{{ props.item.WebsiteSupport }}</a></td>
-				          <td class="text-xs-center">{{ props.item.ListofServicesProvided }}</td>
-					      </template>
-					      <v-alert slot="no-results" :value="true" color="error" icon="warning">
-					          Your search for "{{ search }}" found no results.
-					       </v-alert>
-					    </v-data-table>
-	          </v-flex>
-	        </v-layout>
-	      </v-container>
-</template>
-<template id="home-template">
-           <v-card>
-        <v-container
-          fluid
-          style="min-height: 0;"
-          grid-list-lg
-        >
-          <v-layout row wrap>
-         <v-flex xs4 v-for="i in 3" :key="`4${i}`">
-          <v-card dark color="grey lighten-4">
-            <v-card-text class="px-0 black--text">Total number</v-card-text>
-          </v-card>
+          <v-card>
+            <v-card-title>
+              You can use search
+              <v-spacer></v-spacer>
+              <v-text-field append-icon="search" label="Search" single-line hide-details v-model="search"></v-text-field>
+            </v-card-title>
+            <v-data-table :headers="headers" :items="items" :search="search" class="elevation-1">
+              <template slot="items" slot-scope="props">
+                <td class="text-xs-center">{{ props.item.Organization }}</td>
+                <td class="text-xs-center">{{ props.item.Province }}</td>
+                <td class="text-xs-center">{{ props.item.Relevance }}</td>
+                <td class="text-xs-left">
+                  <a v-bind:href="props.item.WebsiteSupport">{{ props.item.WebsiteSupport }}</a>
+                </td>
+                <td class="text-xs-right">{{ props.item.Services }}</td>
+              </template>
+              <v-alert slot="no-results" :value="true" color="error" icon="warning">
+                Your search for "{{ search }}" found no results.
+              </v-alert>
+            </v-data-table>
         </v-flex>
-            <v-flex xs12>
-              <v-card color="grey lighten-4" class="black--text">
-              	<v-container fluid grid-list-lg>
-                  <v-layout row>
-                    <v-flex xs7>
-                      <div>
-                  <div class="headline">Collaborators - Allies - Competitors</div>
-                  <div>Lorem ipsum dolor sit amet, mel at clita quando. Te sit oratio vituperatoribus, nam ad ipsum posidonium mediocritatem, explicari dissentiunt cu mea. Repudiare disputationi vim in, mollis iriure nec cu, alienum argumentum ius ad. Pri eu justo aeque torquatos.</div>
-                <v-card-actions>
-                  <v-btn flat dark class="black--text">Show</v-btn>
-                </v-card-actions>
-                 </div>
-                    </v-flex>
-              </v-card>
-            </v-flex>
-            <v-flex xs12>
-              <v-card color="grey lighten-4" class="black--text">
-                <v-container fluid grid-list-lg>
-                  <v-layout row>
-                    <v-flex xs7>
-                      <div>
-                        <div class="headline">Number of Futurepreneur Partners</div>
-                        <div>Lorem ipsum dolor sit amet, mel at clita quando. Te sit oratio vituperatoribus, nam ad ipsum posidonium mediocritatem, explicari dissentiunt cu mea. Repudiare disputationi vim in, mollis iriure nec cu, alienum argumentum ius ad. Pri eu justo aeque torquatos.</div>
-                      </div>
-                    </v-flex>
-                    <v-flex xs5>
-                      <v-card-media
-                        src="http://www.newdesignfile.com/postpic/2013/05/graph-line-chart-icon_359792.png"
-                        height="125px"
-                        contain
-                      ></v-card-media>
-                    </v-flex>
-                  </v-layout>
-                </v-container>
-              </v-card>
-            </v-flex>
-            <v-flex xs12>
-              <v-card color="grey lighten-4" class="black--text">
-                <v-container fluid grid-list-lg>
-                  <v-layout row>
-                    <v-flex xs7>
-                      <div>
-                        <div class="headline">Number of Governmental Supports</div>
-                        <div>Lorem ipsum dolor sit amet, mel at clita quando. Te sit oratio vituperatoribus, nam ad ipsum posidonium mediocritatem, explicari dissentiunt cu mea. Repudiare disputationi vim in, mollis iriure nec cu, alienum argumentum ius ad. Pri eu justo aeque torquatos.</div>
-                      </div>
-                    </v-flex>
-                    <v-flex xs5>
-                      <v-card-media
-                        src="http://www.newdesignfile.com/postpic/2013/05/graph-line-chart-icon_359792.png"
-                        height="125px"
-                        contain
-                      ></v-card-media>
-                    </v-flex>
-                  </v-layout>
-                </v-container>
-              </v-card>
-            </v-flex>
+      </v-layout>
+    </v-container>
+  </template>
+
+  <template id="collaborators-template">
+    <v-container fluid fill-height>
+      <v-layout justify-center align-center>
+        <v-flex text-xs-center>
+          <v-card>
+            <v-card-title>
+              You can use search
+              <v-spacer></v-spacer>
+              <v-text-field append-icon="search" label="Search" single-line hide-details v-model="search"></v-text-field>
+            </v-card-title>
+            <v-data-table :headers="headers" :items="items" :search="search" class="elevation-1">
+              <template slot="items" slot-scope="props">
+                <td class="text-xs-left">{{ props.item.Organization }}</td>
+                <td class="text-xs-center">{{ props.item.Province }}</td>
+                <td class="text-xs-center">{{ props.item.Relevance }}</td>
+                <td class="text-xs-center">{{ props.item.Branch }}</td>
+                <td class="text-xs-left">
+                  <a v-bind:href="props.item.WebsiteSupport">{{ props.item.WebsiteSupport }}</a>
+                </td>
+                <td class="text-xs-center">{{ props.item.ListofServicesProvided }}</td>
+              </template>
+              <v-alert slot="no-results" :value="true" color="error" icon="warning">
+                Your search for "{{ search }}" found no results.
+              </v-alert>
+            </v-data-table>
+        </v-flex>
+      </v-layout>
+    </v-container>
+  </template>
+  <template id="home-template">
+    <v-card>
+      <v-container fluid style="min-height: 0;" grid-list-lg>
+        <v-layout row wrap>
+          <v-flex xs4 v-for="i in 3" :key="`4${i}`">
+            <v-card dark color="grey lighten-4">
+              <v-card-text class="px-0 black--text">Total number</v-card-text>
+            </v-card>
+          </v-flex>
+          <v-flex xs12>
+            <v-card color="grey lighten-4" class="black--text">
+              <v-container fluid grid-list-lg>
+                <v-layout row>
+                  <v-flex xs7>
+                    <div>
+                      <div class="headline">Collaborators - Allies - Competitors</div>
+                      <div>Lorem ipsum dolor sit amet, mel at clita quando. Te sit oratio vituperatoribus, nam ad ipsum posidonium
+                        mediocritatem, explicari dissentiunt cu mea. Repudiare disputationi vim in, mollis iriure nec cu,
+                        alienum argumentum ius ad. Pri eu justo aeque torquatos.</div>
+                      <v-card-actions>
+                        <v-btn flat dark class="black--text">Show</v-btn>
+                      </v-card-actions>
+                    </div>
+                  </v-flex>
+            </v-card>
+          </v-flex>
+          <v-flex xs12>
+            <v-card color="grey lighten-4" class="black--text">
+              <v-container fluid grid-list-lg>
+                <v-layout row>
+                  <v-flex xs7>
+                    <div>
+                      <div class="headline">Number of Futurepreneur Partners</div>
+                      <div>Lorem ipsum dolor sit amet, mel at clita quando. Te sit oratio vituperatoribus, nam ad ipsum posidonium
+                        mediocritatem, explicari dissentiunt cu mea. Repudiare disputationi vim in, mollis iriure nec cu,
+                        alienum argumentum ius ad. Pri eu justo aeque torquatos.</div>
+                    </div>
+                  </v-flex>
+                  <v-flex xs5>
+                    <v-card-media src="http://www.newdesignfile.com/postpic/2013/05/graph-line-chart-icon_359792.png" height="125px" contain></v-card-media>
+                  </v-flex>
+                </v-layout>
+              </v-container>
+            </v-card>
+          </v-flex>
+          <v-flex xs12>
+            <v-card color="grey lighten-4" class="black--text">
+              <v-container fluid grid-list-lg>
+                <v-layout row>
+                  <v-flex xs7>
+                    <div>
+                      <div class="headline">Number of Governmental Supports</div>
+                      <div>Lorem ipsum dolor sit amet, mel at clita quando. Te sit oratio vituperatoribus, nam ad ipsum posidonium
+                        mediocritatem, explicari dissentiunt cu mea. Repudiare disputationi vim in, mollis iriure nec cu,
+                        alienum argumentum ius ad. Pri eu justo aeque torquatos.</div>
+                    </div>
+                  </v-flex>
+                  <v-flex xs5>
+                    <v-card-media src="http://www.newdesignfile.com/postpic/2013/05/graph-line-chart-icon_359792.png" height="125px" contain></v-card-media>
+                  </v-flex>
+                </v-layout>
+              </v-container>
+            </v-card>
+          </v-flex>
           </v-layout>
-        </v-container>
-      </v-card>
-    </template>
-  <SurveyPage></SurveyPage>
+          </v-container>
+    </v-card>
+  </template>
   <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
   <script src="https://unpkg.com/vuetify/dist/vuetify.min.js"></script>
   <script src="https://unpkg.com/vue-router/dist/vue-router.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://surveyjs.azureedge.net/1.0.14/survey.vue.min.js"></script>
-
-  <script src="js/survey.js"></script>    
+  <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+  <script src="js/map.js"></script>
+  <script src="js/survey.js"></script>
   <script src="js/table.js"></script>
-  <script src="js/main.js"></script> 
- <style type="text/css">
- table {
-    table-layout: fixed;
-    word-wrap: break-word;
-}
-.formore
-{
-    text-indent: 5rem;
-    font-family: proxima-nova, sans-serif !important;
-    font-style: normal;
-    font-size: 0.7em;
-    font-weight:400;
-    letter-spacing: 1px;
-    color: #231f20;
-    text-transform: uppercase;
-    line-height: 0.7em;
-}
-.forfurther
-{
+  <script src="js/main.js"></script>
+  <style type="text/css">
+    table {
+      table-layout: fixed;
+      word-wrap: break-word;
+    }
 
-    text-indent: 5rem;
-    font-family:proxima-nova, sans-serif !important;
-    font-style: normal;
-    font-size: 0.7em;
-    font-weight:600;
-    letter-spacing: 0.5px;
-    color: #231f20;
-    text-transform: uppercase;
-    line-height: 0.7em;
-}
-.main-step
-{
-    padding-left: 100px;
-    padding-top: 10px;
-    color: #666;
-    /*font: normal 1.1em Arial, Helvetica, sans-serif;*/
-}
-li
-{
-    font-size: 0.5em;
-}
-li p {
-    font: normal Arial, Helvetica, sans-serif;
-    font-size: 1em;
-    color: #000;
-    /*border-left: solid 1px #999;*/
-    margin: 0;
-    padding: 0 0 1em 1em;
-}
-.formore.required:before{
-  content:"**";
-  color:red;
-  font-weight:bold;
-}
-.formore.requiredmore:before{
-  content:"***";
-  color:red;
-  font-weight:bold;
-}
-ol {
-  font: normal Arial, Helvetica, sans-serif;
-  font-size: 2em;
-  color: #999999;
-}
-ol .abclatin{
-    list-style-type:lower-latin;
-    font-size: 1.5em;
-    line-height: 0.5em;
-    padding-left: 5em;
-}
-ol .roman{
-    list-style-type:lower-roman;
-    font-size: 1.5em;
-    line-height: 0.5em;
-    padding-left: 10em;
-}
-</style>
+    .formore {
+      text-indent: 5rem;
+      font-family: proxima-nova, sans-serif !important;
+      font-style: normal;
+      font-size: 0.7em;
+      font-weight: 400;
+      letter-spacing: 1px;
+      color: #231f20;
+      text-transform: uppercase;
+      line-height: 0.7em;
+    }
+
+    .forfurther {
+
+      text-indent: 5rem;
+      font-family: proxima-nova, sans-serif !important;
+      font-style: normal;
+      font-size: 0.7em;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      color: #231f20;
+      text-transform: uppercase;
+      line-height: 0.7em;
+    }
+
+    .main-step {
+      padding-left: 100px;
+      padding-top: 10px;
+      color: #666;
+      /*font: normal 1.1em Arial, Helvetica, sans-serif;*/
+    }
+
+    li {
+      font-size: 0.5em;
+    }
+
+    li p {
+      font: normal Arial, Helvetica, sans-serif;
+      font-size: 1em;
+      color: #000;
+      /*border-left: solid 1px #999;*/
+      margin: 0;
+      padding: 0 0 1em 1em;
+    }
+
+    .formore.required:before {
+      content: "**";
+      color: red;
+      font-weight: bold;
+    }
+
+    .formore.requiredmore:before {
+      content: "***";
+      color: red;
+      font-weight: bold;
+    }
+
+    ol {
+      font: normal Arial, Helvetica, sans-serif;
+      font-size: 2em;
+      color: #999999;
+    }
+
+    ol .abclatin {
+      list-style-type: lower-latin;
+      font-size: 1.5em;
+      line-height: 0.5em;
+      padding-left: 5em;
+    }
+
+    ol .roman {
+      list-style-type: lower-roman;
+      font-size: 1.5em;
+      line-height: 0.5em;
+      padding-left: 10em;
+    }
+  </style>
 </body>
+
 </html>
