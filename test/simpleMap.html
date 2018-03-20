@@ -43,16 +43,19 @@
             markerCoordinates: function () {
                 console.log('Waiting for markers loading...');
                 //this.markerCoordinates.forEach((coord) => {
-                    coord = this.markerCoordinates[this.markerCoordinates.length - 1];
-                    const position = new google.maps.LatLng(coord.latitude, coord.longitude);
-                    const marker = new google.maps.Marker({
-                        position,
-                        map: this.map
-                    });
-                    console.log(this.markers.length);
-                    this.markers.push(marker);
-                    this.map.fitBounds(this.bounds.extend(position));
+                coord = this.markerCoordinates[this.markerCoordinates.length - 1];
+                const position = new google.maps.LatLng(coord.latitude, coord.longitude);
+                const marker = new google.maps.Marker({
+                    position,
+                    map: this.map
+                });
+                //console.log(this.markers.length);
+                this.markers.push(marker);
+                this.map.fitBounds(this.bounds.extend(position));
                 //});
+                if (this.markerCoordinates.length > 290)
+                    console.log(JSON.stringify(jsonArray));
+
             }
         },
         created: function () {
@@ -89,7 +92,7 @@
         }
     });
 
-    function getLatitudeLongitude(callback, address) {
+    function getLatitudeLongitude(callback, address, index) {
         // If adress is not supplied, use default value 'Ferrol, Galicia, Spain'
         address = address || 'Oakville, ON, Canada';
         //console.log(address);
@@ -99,9 +102,10 @@
                 'address': address
             }, function (results, status) {
                 if (status == google.maps.GeocoderStatus.OK) {
-                    callback(results[0]);
+                    // console.log(results);
+                    callback(results[0], index);
                 } else {
-                    console.log("address - " +address+ " was skipped");
+                    console.log("address - " + address + " was skipped");
                 }
             });
         }
@@ -111,8 +115,10 @@
         packages: ["table"]
     });
 
+    var jsonArray;
+
     function getAdsressFromJson(markerCoordinates) {
-        var jsonArray;   
+
         $.getJSON('../data/future.json', function (data) {
             var map = new google.visualization.DataTable();
             map.addRows(data.length);
@@ -122,24 +128,30 @@
             $.each(data, function (i, v) {
                 var fullAddress = v.Community_City.trim() + "," + v.Province_short.trim() + "," + v.ZipCodes
                     .trim();
-
+               // var timeout = i > 200 ? 1500 : 1100;
                 setTimeout(function () {
-                    getLatitudeLongitude(setLatitudeLongitude, fullAddress);
-                }, 1100 * i);
+                    getLatitudeLongitude(setLatitudeLongitude, fullAddress, i);
+                }, 2700 * i);
             });
+
             //addressesArray = map;
             /*var geomap = new google.visualization.GeoMap(
               document.getElementById('visualization'));
                   geomap.draw(map, null);*/
         });
 
-        function setLatitudeLongitude(result) {
+        function setLatitudeLongitude(result, index) {
             /*
             let ac = result.address_components;
             let lat = result.geometry.location.lat();
             let lon = result.geometry.location.lng();
             let city = result[0]["short_name"];
             */
+            console.log(result);
+            jsonArray[index].latitude = new String(result.geometry.location.lat());
+            jsonArray[index].longitude = new String(result.geometry.location.lng());
+            jsonArray[index].place_id = result.place_id;
+            jsonArray[index].formatted_address = result.formatted_address;
             var coord = {
                 latitude: "",
                 longitude: ""

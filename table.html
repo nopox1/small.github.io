@@ -284,7 +284,8 @@
               </v-btn>
               <v-toolbar-title>Additional Support location map</v-toolbar-title>
             </v-toolbar>
-
+            <futurpreneur-map/>
+           
             <div style="flex: 1 1 auto;" />
           </v-card>
         </v-dialog>
@@ -424,11 +425,19 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://surveyjs.azureedge.net/1.0.14/survey.vue.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
-  <script src="js/map.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAM2AtsJrwb3Q9pxirJjv2OVl-V-6Lv1hY"></script>
+  <script src="https://www.google.com/jsapi"></script>
+  <script src="js/map_simple.js"></script>
   <script src="js/survey.js"></script>
   <script src="js/table.js"></script>
   <script src="js/main.js"></script>
   <style type="text/css">
+   #myMap {
+        width: 800px;
+        height: 600px;
+        margin: 0 auto;
+        background: gray;
+    }
     table {
       table-layout: fixed;
       word-wrap: break-word;

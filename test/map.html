@@ -1,26 +1,190 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html class="no-js" lang="">
 
 <head>
     <meta charset="utf-8">
-    <title>google-map-san</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel='stylesheet' id='style-css' async href='../custom/themes/small/style.css' type='text/css' media='all' />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAM2AtsJrwb3Q9pxirJjv2OVl-V-6Lv1hY"></script>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://www.google.com/jsapi"></script>
 </head>
 
 <body>
     <div id="app">
-        <futurpreneur-map :markers='[
-        {"lat":35.6432027,"lng":139.6729435},
-        {"lat":35.5279833,"lng":139.6989209},
-        {"lat":35.6563623,"lng":139.7215211},
-        {"lat":35.6167531,"lng":139.5469376},
-        {"lat":35.6950961,"lng":139.5037899}
-      ]'>
-        </futurpreneur-map>
+        <div id="myMap"></div>
     </div>
-    <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="mapTest.js"></script>
-    <!-- built files will be auto injected -->
+    <!--<script src="js/main.js"></script>-->
 </body>
 
 </html>
+<script>
+    new Vue({
+        el: "#app",
+        data: function () {
+            return {
+                markerDetailes: [{
+                    latitude: 53.1304,
+                    longitude: -106.3468,
+                    place_id: "",
+                    formatted_address: "Canada",
+                    name: ""
+                }],
+                map: null,
+                bounds: null,
+                markers: []
+            }
+        },
+        watch: {
+            // whenever markerCoordinates changes, this function will run
+            markerDetailes: function () {
+                console.log('Waiting for markers loading...');
+                console.log(this.markerDetailes.length);
+                this.markerDetailes.forEach((place) => {
+                    var infowindow = new google.maps.InfoWindow();
+                    const position = new google.maps.LatLng(place.latitude, place.longitude);
+                    const marker = new google.maps.Marker({
+                        position,
+                        map: this.map,
+                        title: 'Click to view detailes'
+                    });
+                    google.maps.event.addListener(marker, 'click', function () {
+                        infowindow.setContent('<div><strong>' + place.name +
+                            '</strong><br>' + 'Address: ' + place.formatted_address +
+                            '</div>');
+                        infowindow.open(this.map, this);
+                    });
+                    //console.log(this.markers.length);
+                    this.markers.push(marker);
+                    this.bounds.extend(position);
+                });
+                this.map.fitBounds(this.bounds);
+                google.maps.event.addListenerOnce(this.map, 'bounds_changed', function (event) {
+                    console.log("bounds_changed");
+                    const zoom = this.getZoom() - 1;
+                    console.log(zoom);
+                    this.setZoom(this.getZoom() - 1);
+                    const zoomq = this.getZoom();
+                    console.log(zoomq);
+                    if (this.getZoom() > 15) {
+                        this.setZoom(15);
+                    }
+                });
+                google.maps.event.addListener(this.map, 'zoom_changed', function () {
+                    console.log("zoom_changed");
+                    var z = this.getZoom();
+                    //this.setZoom(this.getZoom() - 1);
+                    console.log(z);
+                });
+                google.maps.event.addListener(this.map, 'idle', function () {
+                    console.log("idle");
+                    if (this.getZoom()) { // or set a minimum
+                        this.setZoom(8); // set zoom here
+                        console.log(16);
+                    }
+                    else{
+                        console.log("else");
+                    }
+                    //this.setZoom(this.getZoom() - 1);
+                    console.log(z);
+                });
+                /*zoomChangeBoundsListener =
+                    google.maps.event.addListenerOnce(this.map, 'bounds_changed', function (event) {
+                        console.log("bounds_changed2");
+                        if (this.getZoom()) { // or set a minimum
+                            this.setZoom(16); // set zoom here
+                        }
+                    });
+
+                setTimeout(function () {
+                    google.maps.event.removeListener(zoomChangeBoundsListener)
+                }, 2000);*/
+
+            }
+        },
+        /* marker.addListener('click', function() {
+          infowindow.open(map, marker);
+        });
+*/
+        created: function () {
+            console.log("created");
+            getLocationFromJson(this.markerDetailes);
+        },
+        mounted: function () {
+            console.log("map: ", google.maps);
+            /* this.map = new google.maps.Map(document.getElementById('myMap'), {
+                 center: {
+                     lat: 60.000,
+                     lng: -90.000
+                 },
+                 scrollwheel: false,
+                 zoom: 4
+             });*/
+            this.bounds = new google.maps.LatLngBounds();
+            const element = document.getElementById('myMap')
+            const mapCentre = this.markerDetailes[0];
+            const options = {
+                center: new google.maps.LatLng(mapCentre.latitude, mapCentre.longitude)
+            }
+            this.map = new google.maps.Map(element, options);
+            /*   this.markerDetailes.forEach((coord) => {
+                   const position = new google.maps.LatLng(coord.latitude, coord.longitude);
+                   //console.log(position);
+                   const marker = new google.maps.Marker({
+                       position,
+                       map: this.map
+                   });
+                   this.markers.push(marker);
+                   this.map.fitBounds(this.bounds.extend(position));
+               });*/
+        }
+    });
+
+    google.load("visualization", "1", {
+        packages: ["table"]
+    });
+
+    //var jsonArray;
+
+    function getLocationFromJson(markerDetailes) {
+
+        $.getJSON('../data/future.json', function (data) {
+            var map = new google.visualization.DataTable();
+            map.addRows(data.length);
+            map.addColumn('string', 'Adress');
+            // build the map data, loop over each result
+            $.each(data, function (i, v) {
+                const marker = {
+                    latitude: "",
+                    longitude: "",
+                    place_id: "",
+                    formatted_address: "",
+                    name
+                }
+                marker.longitude = v.longitude;
+                marker.latitude = v.latitude;
+                marker.place_id = v.place_id;
+                marker.formatted_address = v.formatted_address;
+                marker.name = v.Partners;
+                markerDetailes.push(marker);
+            });
+            /*var geomap = new google.visualization.GeoMap(
+              document.getElementById('visualization'));
+                  geomap.draw(map, null);*/
+        });
+    };
+</script>
+<style scoped>
+    #myMap {
+        width: 800px;
+        height: 600px;
+        margin: 0 auto;
+        background: gray;
+    }
+</style>
