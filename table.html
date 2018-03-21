@@ -11,7 +11,7 @@
 <body>
   <div id="app">
     <v-app id="inspire">
-      <v-navigation-drawer fixed v-model="drawer" app>
+      <v-navigation-drawer fixed v-model="drawer" app width=350>
         <v-list dense>
           <v-list-tile v-for="route in this.$router.options.routes" :key="route.name" :to="route.path">
             <v-list-tile-action>

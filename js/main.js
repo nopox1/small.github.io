@@ -14,13 +14,13 @@ var router = new VueRouter({
     {
       path: "/survey",
       icon: "business_center",
-      name: "Self-assessment survey",
+      name: "Take FREE Self-Assessment Survey",
       component: SurveyPage
     },
     {
       path: "/howtoopen",
       icon: "looks_one",
-      name: "What should I do to start my own business?",
+      name: "How do I start my Own Business?",
       component: HowToOpen
     },
     /*{
@@ -32,21 +32,21 @@ var router = new VueRouter({
     {
       path: "/futurpreneur",
       icon: "domain",
-      name: "Where can i get additional support?",
+      name: "Where can I find Additional Support?",
       component: FuturpreneurList
     },
     {
       path: "/government",
       icon: "monetization_one",
-      name: "What grants/loans are avaliable?",
+      name: "Which Grants/Loans Programs are available?",
       component: GovernmentList
     },
-    {
+    /*{
         path: "/map",
         icon: "map",
         name: "Where can i find?",
         component: FuturpreneurMap
-      }
+      }*/
   ]
 });
 
