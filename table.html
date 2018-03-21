@@ -355,24 +355,32 @@
     <v-card>
       <v-container fluid style="min-height: 0;" grid-list-lg>
         <v-layout row wrap>
-          <v-flex xs4 v-for="i in 3" :key="`4${i}`">
+          <v-flex xs4>
             <v-card dark color="grey lighten-4">
-              <v-card-text class="px-0 black--text">Total number</v-card-text>
+              <v-card-text class="px-0 black--text">Total partners</v-card-text>
+              <div class="px-0 black--text">{{totalAdditionalHelpMessage}}</div>
             </v-card>
           </v-flex>
+          <v-flex xs4>
+              <v-card dark color="grey lighten-4">
+                <v-card-text class="px-0 black--text">Total grants</v-card-text>
+                {{totalAdditionalHelp}}
+              </v-card>
+            </v-flex>
+            <v-flex xs4>
+                <v-card dark color="grey lighten-4">
+                  <v-card-text class="px-0 black--text">Total loans</v-card-text>
+                  <p>{{totalAdditionalHelp}}</p>
+                </v-card>
+              </v-flex>
           <v-flex xs12>
             <v-card color="grey lighten-4" class="black--text">
               <v-container fluid grid-list-lg>
                 <v-layout row>
                   <v-flex xs7>
                     <div>
-                      <div class="headline">Collaborators - Allies - Competitors</div>
-                      <div>Lorem ipsum dolor sit amet, mel at clita quando. Te sit oratio vituperatoribus, nam ad ipsum posidonium
-                        mediocritatem, explicari dissentiunt cu mea. Repudiare disputationi vim in, mollis iriure nec cu,
-                        alienum argumentum ius ad. Pri eu justo aeque torquatos.</div>
-                      <v-card-actions>
-                        <v-btn flat dark class="black--text">Show</v-btn>
-                      </v-card-actions>
+                      <div class="headline">Additional Support per corresponding Province, Territory or Region</div>
+                      <div id="futureTable" style="width: 400px; height: 400px;"></div>
                     </div>
                   </v-flex>
             </v-card>
@@ -383,14 +391,9 @@
                 <v-layout row>
                   <v-flex xs7>
                     <div>
-                      <div class="headline">Number of Futurepreneur Partners</div>
-                      <div>Lorem ipsum dolor sit amet, mel at clita quando. Te sit oratio vituperatoribus, nam ad ipsum posidonium
-                        mediocritatem, explicari dissentiunt cu mea. Repudiare disputationi vim in, mollis iriure nec cu,
-                        alienum argumentum ius ad. Pri eu justo aeque torquatos.</div>
-                    </div>
-                  </v-flex>
-                  <v-flex xs5>
-                    <v-card-media src="http://www.newdesignfile.com/postpic/2013/05/graph-line-chart-icon_359792.png" height="125px" contain></v-card-media>
+                      <div class="headline">Community Partners per province</div>
+                      <div id="futureChart" style="width: 600px; height: 400px;"></div>
+                      </div>
                   </v-flex>
                 </v-layout>
               </v-container>
@@ -427,10 +430,13 @@
   <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAM2AtsJrwb3Q9pxirJjv2OVl-V-6Lv1hY"></script>
   <script src="https://www.google.com/jsapi"></script>
+  <script src="https://www.gstatic.com/charts/loader.js"></script>
+  <script src="js/dashboard.js"></script>
   <script src="js/map_simple.js"></script>
   <script src="js/survey.js"></script>
   <script src="js/table.js"></script>
   <script src="js/main.js"></script>
+
   <style type="text/css">
     #myMap {
       width: 800px;

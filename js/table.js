@@ -8,10 +8,6 @@ const HowToOpen = {
   }
 };
 
-const Dashboard = {
-  template: "#home-template"
-};
-
 const FuturpreneurList = {
   template: "#futurpreneur-template",
   data: function() {

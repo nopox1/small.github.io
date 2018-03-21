@@ -5209,24 +5209,6 @@
     "formatted_address": "Saskatoon, SK S7T 0G3, Canada"
   },
   {
-    "Province": "Alberta",
-    "Province_short": "AB",
-    "Partners": "Regional Business Accelerator",
-    "WebsiteSupport": "http://www.smallbusinessinformation.ca/",
-    "Community_City": "Lloydminster",
-    "ZipCodes": "T9V 3B4",
-    "C1": "T",
-    "C2": "9",
-    "C3": "V",
-    "C4": "3",
-    "C5": "B",
-    "C6": "4",
-    "latitude": "53.2780414",
-    "longitude": "-110.02761670000001",
-    "place_id": "ChIJWVOF1YmyCVMRA_Ty3qm_Fso",
-    "formatted_address": "Lloydminster, AB T9V 3B4, Canada"
-  },
-  {
     "Province": "Yukon",
     "Province_short": "YT",
     "Partners": "Association Franco-Yukonnaise",
