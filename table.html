@@ -177,7 +177,7 @@
               </li>
               <li>
                 <p>Begin Operations!</p>
-                <p class="formore">***For further information about Partnership agreement please visit:
+                <p class="formore">For further information about Partnership agreement please visit:
                   <a href="https://www.canada.ca/en/revenue-agency/services/tax/businesses/small-businesses-self-employed-income/setting-your-business/partnership.html">Partnership</a>
                 </p>
               </li>
@@ -195,14 +195,14 @@
                 <p>Complete articles of Incorporation - Incorporation is a form of business ownership that creates a distinct
                   legal entity separate from its owners (shareholders).</p>
                 <p class="formore">For more information on the steps to complete articles of incorporation please visit:
-                  <a href="https://www.ic.gc.ca/eic/site/cd-dgc.nsf/eng/cs04977.html">link</a>
+                  <a href="https://www.ic.gc.ca/eic/site/cd-dgc.nsf/eng/cs04977.html">Instructions Form 4001 - Articles of Incorporation</a>
                 </p>
               </li>
               <li>
                 <p>Submit & Register Articles of Incorporation - Canadian legislation requires you to register your corporation
                   in each province and territory in which it will conduct business.</p>
                 <p class="formore">For further information on provincial and territorial registrar websites, please visit:
-                  <a href="https://www.ic.gc.ca/eic/site/cd-dgc.nsf/eng/cs04578.html">link</a>
+                  <a href="https://www.ic.gc.ca/eic/site/cd-dgc.nsf/eng/cs04578.html">Provincial and territorial registrar websites</a>
                 </p>
               </li>
               <li>
@@ -219,11 +219,11 @@
               </li>
               <li>
                 <p>Begin Operations</p>
-                <p class="formore">**For further information about Corporations please visit:
-                  <a href="https://www.ic.gc.ca/eic/site/cd-dgc.nsf/eng/h_cs02193.html">link</a>
+                <p class="formore">For further information about Corporations please visit:
+                  <a href="https://www.ic.gc.ca/eic/site/cd-dgc.nsf/eng/h_cs02193.html">Frequently asked questions</a>
                 </p>
-                <p class="formore">*** For further information about Incorporation please visit:
-                  <a href="https://www.ic.gc.ca/eic/site/cd-dgc.nsf/eng/cs06642.html">link</a>
+                <p class="formore required">For further information about Incorporation please visit:
+                  <a href="https://www.ic.gc.ca/eic/site/cd-dgc.nsf/eng/cs06642.html">Steps to incorporating</a>
                 </p>
               </li>
             </ol>
@@ -250,18 +250,18 @@
             <v-data-table :headers="headers" :items="items" :search="search" class="elevation-1" :loading="loading">
               <template slot="headerCell" slot-scope="props">
                 <span class="txt-header">{{ props.header.text }} </span>
-                <v-menu bottom offset-y @click.native.stop>
+                <!--<v-menu bottom offset-y @click.native.stop>
                   <a slot="activator">
                     <i class="material-icons">menu</i>
                   </a>
-                  <v-list class="menu-filter">
-                    <v-list-tile @click.stop="" style="width:250px;">
-                      <v-form class="wfull">
-                        <v-select :items="provinces" v-model="props.header.filterable.value" label="Select" autocomplete clearable single-line bottom></v-select>
+                  <v-list>
+                    <v-list-tile @click.stop="" style="width:200px;">
+                      <v-form>
+                        <v-select :items="provinces" label="Select" autocomplete clearable single-line bottom></v-select>
                       </v-form>
                     </v-list-tile>
                   </v-list>
-                </v-menu>
+                </v-menu>-->
               </template>
               <template slot="items" slot-scope="props">
                 <td class="text-xs-center">{{ props.item.Province }}</td>
@@ -285,7 +285,7 @@
               <v-toolbar-title>Additional Support location map</v-toolbar-title>
             </v-toolbar>
             <futurpreneur-map/>
-           
+
             <div style="flex: 1 1 auto;" />
           </v-card>
         </v-dialog>
@@ -432,47 +432,20 @@
   <script src="js/table.js"></script>
   <script src="js/main.js"></script>
   <style type="text/css">
-   #myMap {
-        width: 800px;
-        height: 600px;
-        margin: 0 auto;
-        background: gray;
+    #myMap {
+      width: 800px;
+      height: 600px;
+      margin: 0 auto;
+      background: gray;
     }
+
     table {
       table-layout: fixed;
       word-wrap: break-word;
     }
-
-    .formore {
-      text-indent: 5rem;
-      font-family: proxima-nova, sans-serif !important;
-      font-style: normal;
-      font-size: 0.7em;
-      font-weight: 400;
-      letter-spacing: 1px;
-      color: #231f20;
-      text-transform: uppercase;
-      line-height: 0.7em;
-    }
-
-    .forfurther {
-
-      text-indent: 5rem;
-      font-family: proxima-nova, sans-serif !important;
-      font-style: normal;
-      font-size: 0.7em;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      color: #231f20;
-      text-transform: uppercase;
-      line-height: 0.7em;
-    }
-
     .main-step {
       padding-left: 100px;
       padding-top: 10px;
-      color: #666;
-      /*font: normal 1.1em Arial, Helvetica, sans-serif;*/
     }
 
     li {
@@ -480,14 +453,49 @@
     }
 
     li p {
-      font: normal Arial, Helvetica, sans-serif;
-      font-size: 1em;
-      color: #000;
-      /*border-left: solid 1px #999;*/
       margin: 0;
-      padding: 0 0 1em 1em;
+      padding: 0 0 0.5em 0em;
+    }
+    ol {
+      font-size: 2em;
     }
 
+    ol .abclatin {
+      list-style-type: lower-latin;
+      font-size: 1.8em;
+      line-height: 0.7em;
+      padding-left: 2em;
+    }
+
+    ol .roman {
+      list-style-type: lower-roman;
+      font-size: 1.9em;
+      line-height: 0.5em;
+      padding-left: 2em;
+    }
+    .formore {
+      text-indent: 5rem;
+      font-style: normal;
+      font-size: 0.8em;
+      font-weight: 400;
+      letter-spacing: 1px;
+      color: #231f20;
+      line-height: 1em;
+    }
+    .formore:before {
+      content: "*";
+      color: red;
+      font-weight: bold;
+    }
+
+    .forfurther {
+      text-indent: 7rem;
+      font-style: normal;
+      font-size: 0.8em;
+      letter-spacing: 0.5px;
+      color: #231f20;
+      line-height: 1em;
+    }
     .formore.required:before {
       content: "**";
       color: red;
@@ -498,26 +506,6 @@
       content: "***";
       color: red;
       font-weight: bold;
-    }
-
-    ol {
-      font: normal Arial, Helvetica, sans-serif;
-      font-size: 2em;
-      color: #999999;
-    }
-
-    ol .abclatin {
-      list-style-type: lower-latin;
-      font-size: 1.5em;
-      line-height: 0.5em;
-      padding-left: 5em;
-    }
-
-    ol .roman {
-      list-style-type: lower-roman;
-      font-size: 1.5em;
-      line-height: 0.5em;
-      padding-left: 10em;
     }
   </style>
 </body>

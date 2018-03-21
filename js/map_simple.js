@@ -53,23 +53,6 @@ const FuturpreneurMap = {
         lng: parseFloat(mapCentre.longitude)
     };
     this.map.fitBounds(this.bounds);
-     /* console.log(center);
-      //center the map to a specific spot (city)
-      this.map.setCenter(center);
-      console.log(this.map.getCenter());
-      //center the map to the geometric center of all markers
-      this.map.setCenter(this.bounds.getCenter());
-      console.log(this.bounds.getCenter());
-      */
-     
-     /*google.maps.event.addListenerOnce(this.map, 'bounds_changed', function(event) {
-        console.log(this);
-        this.setZoom(this.getZoom() - 1);
-      
-        if (this.getZoom() > 15) {
-          this.setZoom(15);
-        }
-      });*/
       google.maps.event.addListener(this.map, 'zoom_changed', function () {
         console.log("zoom_changed");
         var z = this.getZoom();
@@ -90,16 +73,6 @@ const FuturpreneurMap = {
         google.maps.event.removeListener(listener); 
         console.log(z);
     });
-     /* this.map.fitBounds(this.bounds);
-      var listener = google.maps.event.addListener(this.map, "idle", function() { 
-          console.log(this);
-          console.log(thiss.getZoom());
-        if (map.getZoom() > 16) map.setZoom(16); 
-        google.maps.event.removeListener(listener); 
-      });*/
-      //remove one zoom level to ensure no marker is on the edge.
-      //this.map.setZoom(this.map.getZoom() - 1);
-    
     }
   },
   created: function() {
