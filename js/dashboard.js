@@ -40,11 +40,7 @@ const Dashboard = {
                       data[i - 1].Province_short
                   );
               } else {
-                //console.log("total parthers per Province: " + data[i - 1].Province+ " is " +totalPerProvince );
-                //if (i < data.length - 1)
                 future.addRow([data[i - 1].Province, totalPerProvince++]);
-                //else future.addRow([data[i].Province, totalPerProvince++]);
-                //future.setValue(i, 1, totalPerProvince++);
                 totalPerProvince = 1;
               }
             } else if (i > 0) {
@@ -57,7 +53,7 @@ const Dashboard = {
           console.log(this.totalAdditionalHelp);
           var table = new google.visualization.Table(element);
           table.draw(future, {
-            showRowNumber: true,
+            showRowNumber: false,
             width: "100%",
             height: "100%"
           });
@@ -73,10 +69,10 @@ const Dashboard = {
             }
           };*/
           console.log(future);
-          var chart = new google.visualization.BarChart(
+          var chart = new google.visualization.ColumnChart(
             document.getElementById("futureChart")
           );
-          chart.draw(future);
+          chart.draw(future,null);
           //console.log(this.futureTable);
         },
         "json"

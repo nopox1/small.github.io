@@ -357,20 +357,20 @@
         <v-layout row wrap>
           <v-flex xs4>
             <v-card dark color="grey lighten-4">
-              <v-card-text class="px-0 black--text">Total partners</v-card-text>
-              <div class="px-0 black--text">{{totalAdditionalHelpMessage}}</div>
+              <v-card-text class="text-xs-center black--text">Total partners</v-card-text>
+              <div class="text-xs-center black--text">292</div>
             </v-card>
           </v-flex>
           <v-flex xs4>
               <v-card dark color="grey lighten-4">
-                <v-card-text class="px-0 black--text">Total grants</v-card-text>
-                {{totalAdditionalHelp}}
+                <v-card-text class="text-xs-center black--text">Total grants</v-card-text>
+                <div class="text-xs-center black--text">4</div>
               </v-card>
             </v-flex>
             <v-flex xs4>
                 <v-card dark color="grey lighten-4">
-                  <v-card-text class="px-0 black--text">Total loans</v-card-text>
-                  <p>{{totalAdditionalHelp}}</p>
+                  <v-card-text class="text-xs-center black--text">Total loans</v-card-text>
+                  <div class="text-xs-center black--text">49</div>
                 </v-card>
               </v-flex>
           <v-flex xs12>
@@ -392,7 +392,7 @@
                   <v-flex xs7>
                     <div>
                       <div class="headline">Community Partners per province</div>
-                      <div id="futureChart" style="width: 600px; height: 400px;"></div>
+                      <div id="futureChart" style="width: 800px; height: 400px;"></div>
                       </div>
                   </v-flex>
                 </v-layout>
@@ -405,19 +405,32 @@
                 <v-layout row>
                   <v-flex xs7>
                     <div>
-                      <div class="headline">Number of Governmental Supports</div>
+                      <div class="headline">Number of Governmental grants per province</div>
                       <div>Lorem ipsum dolor sit amet, mel at clita quando. Te sit oratio vituperatoribus, nam ad ipsum posidonium
                         mediocritatem, explicari dissentiunt cu mea. Repudiare disputationi vim in, mollis iriure nec cu,
                         alienum argumentum ius ad. Pri eu justo aeque torquatos.</div>
                     </div>
                   </v-flex>
-                  <v-flex xs5>
-                    <v-card-media src="http://www.newdesignfile.com/postpic/2013/05/graph-line-chart-icon_359792.png" height="125px" contain></v-card-media>
-                  </v-flex>
                 </v-layout>
               </v-container>
             </v-card>
           </v-flex>
+          <v-flex xs12>
+              <v-card color="grey lighten-4" class="black--text">
+                <v-container fluid grid-list-lg>
+                  <v-layout row>
+                    <v-flex xs7>
+                      <div>
+                        <div class="headline">Number of Governmental loans per province</div>
+                        <div>Lorem ipsum dolor sit amet, mel at clita quando. Te sit oratio vituperatoribus, nam ad ipsum posidonium
+                          mediocritatem, explicari dissentiunt cu mea. Repudiare disputationi vim in, mollis iriure nec cu,
+                          alienum argumentum ius ad. Pri eu justo aeque torquatos.</div>
+                      </div>
+                    </v-flex>
+                  </v-layout>
+                </v-container>
+              </v-card>
+            </v-flex>
           </v-layout>
           </v-container>
     </v-card>
