@@ -51,12 +51,16 @@ const Dashboard = {
           this.futureTable = future;
           const element = document.getElementById("futureTable");
           console.log(this.totalAdditionalHelp);
+          future.setProperty(0, 0, 'style', 'width:200px');
+          future.setProperty(0, 1, 'style', 'width:50px');
           var table = new google.visualization.Table(element);
           table.draw(future, {
             showRowNumber: false,
-            width: "100%",
-            height: "100%"
+            //width: "100%",
+            height: "100%",
+            allowHtml: true
           });
+
           /* var options = {
             title: 'Population of Largest U.S. Cities',
             chartArea: {width: '50%'},

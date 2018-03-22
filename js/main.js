@@ -13,7 +13,7 @@ var router = new VueRouter({
     },
     {
       path: "/survey",
-      icon: "business_center",
+      icon: "format_list_bulleted",
       name: "Take FREE Self-Assessment Survey",
       component: SurveyPage
     },
@@ -31,7 +31,7 @@ var router = new VueRouter({
                 },*/
     {
       path: "/futurpreneur",
-      icon: "domain",
+      icon: "help",
       name: "Where can I find Additional Support?",
       component: FuturpreneurList
     },
