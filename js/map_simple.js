@@ -47,6 +47,8 @@ const FuturpreneurMap = {
         //this.map.fitBounds(this.bounds.extend(position));
         this.bounds.extend(position);
       });
+      var markerCluster = new MarkerClusterer(this.map, this.markers,
+        {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
       const mapCentre = this.markerDetailes[0];
       const center = {
         lat: parseFloat(mapCentre.latitude),
