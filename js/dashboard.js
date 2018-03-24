@@ -42,11 +42,9 @@ const Dashboard = {
           var totalPartnersArray = {};
           data.forEach(function(v, i) {
               if (!totalPartnersArray[v.Province]) {
-                // Initial object property creation.
-                totalPartnersArray[v.Province] = [i]; // Create an array for that property.
+                totalPartnersArray[v.Province] = [i]; 
               } else {
-                // Same occurrences found.
-                totalPartnersArray[v.Province].push(i); // Fill the array.
+                totalPartnersArray[v.Province].push(i);
               }
           });
 
@@ -97,13 +95,11 @@ const Dashboard = {
           var grantsArray = {};
           var loansArray = {};
           data.forEach(function(v, i) {
-            if (v.Services.match("Loans")) {
+            if (v.Services.match(/loans+/i)) {
               if (!loansArray[v.Province]) {
-                // Initial object property creation.
-                loansArray[v.Province] = [i]; // Create an array for that property.
+                loansArray[v.Province] = [i]; 
               } else {
-                // Same occurrences found.
-                loansArray[v.Province].push(i); // Fill the array.
+                loansArray[v.Province].push(i);
               }
             } else {
               if (!grantsArray[v.Province]) {
