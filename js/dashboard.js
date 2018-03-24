@@ -6,53 +6,57 @@ const Dashboard = {
   template: "#home-template",
   data: function() {
     return {
-      futureTable: null,
-      grantsTable: null,
-      totalAdditionalHelp: 0
+      total: { totalPartners: "", totalGrants: "", totalLoans: "" }
     };
   },
   methods: {
     buildDashFromJson: function() {
       var futureDataUrl = "data/future.json";
       var grantsDataUrl = "data/grants.json";
-      var provincesArray = [];
+      let totalPartners = 0;
+      let totalGrants = 0;
+      let totalLoans = 0;
+      var vm = this;
       $.get(
         futureDataUrl,
         function(data) {
           var future = new google.visualization.DataTable();
-          console.log("Data loade " + data.length);
-          this.totalAdditionalHelp = data.length;
+          totalPartners = data.length;
+          console.log("Data loaded " + totalPartners);
+          vm.total.totalPartners = totalPartners;
           future.addColumn("string", "Province, Territory or Region");
           future.addColumn("number", "Partners");
-          var totalPerProvince = 1;
-          $.each(data, function(i, v) {
-            //console.log("counting for " + v.Province_short + " total is " +totalPerProvince + " and i is " + i);
+         // var totalPerProvince = 1;
+          /*$.each(data, function(i, v) {
             if (i > 0 && i < data.length - 1) {
-              //console.log("v.Province_short is " + v.Province_short + " data[i - 1].Province_short is " + data[i - 1].Province_short);
               if (v.Province_short == data[i - 1].Province_short) {
                 totalPerProvince++;
-                if (v.Province_short == "YT")
-                  console.log(
-                    i +
-                      " " +
-                      data[i - 1].Province_short +
-                      " and " +
-                      data[i - 1].Province_short
-                  );
               } else {
                 future.addRow([data[i - 1].Province, totalPerProvince++]);
                 totalPerProvince = 1;
               }
             } else if (i > 0) {
-              console.log("sdfsdfsd");
               future.addRow([data[i].Province, ++totalPerProvince]);
             }
+          });*/
+          var totalPartnersArray = {};
+          data.forEach(function(v, i) {
+              if (!totalPartnersArray[v.Province]) {
+                // Initial object property creation.
+                totalPartnersArray[v.Province] = [i]; // Create an array for that property.
+              } else {
+                // Same occurrences found.
+                totalPartnersArray[v.Province].push(i); // Fill the array.
+              }
           });
-          this.futureTable = future;
+
+          Object.keys(totalPartnersArray).forEach(function(v) {
+            future.addRow([v, totalPartnersArray[v].length]);
+          });
+
           const element = document.getElementById("futureTable");
-          console.log(this.totalAdditionalHelp);
-          future.setProperty(0, 0, 'style', 'width:200px');
-          future.setProperty(0, 1, 'style', 'width:50px');
+          future.setProperty(0, 0, "style", "width:200px");
+          future.setProperty(0, 1, "style", "width:50px");
           var table = new google.visualization.Table(element);
           table.draw(future, {
             showRowNumber: false,
@@ -72,25 +76,96 @@ const Dashboard = {
               title: 'City'
             }
           };*/
-          console.log(future);
           var chart = new google.visualization.ColumnChart(
             document.getElementById("futureChart")
           );
-          chart.draw(future,null);
-          //console.log(this.futureTable);
+          chart.draw(future, null);
         },
         "json"
       );
+      $.get(
+        grantsDataUrl,
+        function(data) {
+          var grants = new google.visualization.DataTable();
+          var loans = new google.visualization.DataTable();
+          console.log("Grants loaded " + data.length);
+          grants.addColumn("string", "Province");
+          grants.addColumn("number", "grants");
+          loans.addColumn("string", "Province");
+          loans.addColumn("number", "loans");
+
+          var grantsArray = {};
+          var loansArray = {};
+          data.forEach(function(v, i) {
+            if (v.Services.match("Loans")) {
+              if (!loansArray[v.Province]) {
+                // Initial object property creation.
+                loansArray[v.Province] = [i]; // Create an array for that property.
+              } else {
+                // Same occurrences found.
+                loansArray[v.Province].push(i); // Fill the array.
+              }
+            } else {
+              if (!grantsArray[v.Province]) {
+                // Initial object property creation.
+                grantsArray[v.Province] = [i]; // Create an array for that property.
+              } else {
+                // Same occurrences found.
+                grantsArray[v.Province].push(i); // Fill the array.
+              }
+            }
+          });
+
+          Object.keys(loansArray).forEach(function(v) {
+            loans.addRow([v, loansArray[v].length]);
+            totalLoans = totalLoans + loansArray[v].length;
+          });
+          Object.keys(grantsArray).forEach(function(v) {
+            grants.addRow([v, grantsArray[v].length]);
+            totalGrants = totalGrants + grantsArray[v].length;
+          });
+
+          var grantsChart = new google.visualization.ColumnChart(
+            document.getElementById("grantsChart")
+          );
+          grantsChart.draw(grants, null);
+
+          /* var options = {
+            title: 'Population of Largest U.S. Cities',
+            chartArea: {width: '50%'},
+            hAxis: {
+              title: 'Total Population',
+              minValue: 0
+            },
+            vAxis: {
+              title: 'City'
+            }
+          };*/
+          var chart = new google.visualization.ColumnChart(
+            document.getElementById("loansChart")
+          );
+          chart.draw(loans, null);
+          console.log("totalGrants - " + totalGrants);
+          console.log("totalLoans - " + totalLoans);
+          vm.total.totalGrants = totalGrants;
+          vm.total.totalLoans = totalLoans;
+        },
+        "json"
+      );
+
+      //this.total.totalPartners = totalPartners;
+      //  this.total.totalGrants = totalGrants;
+      //this.total.totalLoans = totalLoans;
+      console.log("totalPartners - " + totalPartners);
     }
   },
   created: function() {
+    console.log(this.total);
     this.buildDashFromJson();
-  },
+  } /*,
   computed: {
-    // a computed getter
-    totalAdditionalHelpMessage: function() {
-      // `this` points to the vm instance
-      return this.totalAdditionalHelp;
+    totalCounter: function() {
+      return this.total;
     }
-  }
+  }*/
 };

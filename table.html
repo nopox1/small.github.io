@@ -358,19 +358,19 @@
           <v-flex xs4>
             <v-card dark color="grey lighten-4">
               <v-card-text class="text-xs-center black--text bq-title">Total partners</v-card-text>
-              <div class="text-xs-center black--text"><h1>292</h1></div>
+              <div class="text-xs-center black--text"><h1>{{total.totalPartners}}</h1></div>
             </v-card>
           </v-flex>
           <v-flex xs4>
               <v-card dark color="grey lighten-4">
                 <v-card-text class="text-xs-center black--text">Total grants</v-card-text>
-                <div class="text-xs-center black--text"><h1>4</h1></div>
+                <div class="text-xs-center black--text"><h1>{{total.totalGrants}}</h1></div>
               </v-card>
             </v-flex>
             <v-flex xs4>
                 <v-card dark color="grey lighten-4">
                   <v-card-text class="text-xs-center black--text">Total loans</v-card-text>
-                  <div class="text-xs-center black--text"><h1>49</h1></div>
+                  <div class="text-xs-center black--text"><h1>{{total.totalLoans}}</h1></div>
                 </v-card>
               </v-flex>
           <v-flex xs4>
@@ -398,33 +398,28 @@
               </v-container>
             </v-card>
           </v-flex>
-          <v-flex xs12>
+          <v-flex xs6>
             <v-card color="grey lighten-4" class="black--text">
               <v-container fluid grid-list-lg>
                 <v-layout row>
-                  <v-flex xs7>
+                  <v-flex xs6>
                     <div>
-                      <div class="headline">Number of Governmental grants per province</div>
-                      <div>Lorem ipsum dolor sit amet, mel at clita quando. Te sit oratio vituperatoribus, nam ad ipsum posidonium
-                        mediocritatem, explicari dissentiunt cu mea. Repudiare disputationi vim in, mollis iriure nec cu,
-                        alienum argumentum ius ad. Pri eu justo aeque torquatos.</div>
+                      <div class="headline" style="width: 450px;">Number of grants per province</div>
+                      <div id="grantsChart" style="width: 450px; height: 300px;"></div>
                     </div>
                   </v-flex>
                 </v-layout>
               </v-container>
             </v-card>
           </v-flex>
-          <v-flex xs12>
+          <v-flex xs6>
               <v-card color="grey lighten-4" class="black--text">
                 <v-container fluid grid-list-lg>
                   <v-layout row>
-                    <v-flex xs7>
+                    <v-flex xs6>
                       <div>
-                        <div class="headline">Number of Governmental loans per province</div>
-                        <div>Lorem ipsum dolor sit amet, mel at clita quando. Te sit oratio vituperatoribus, nam ad ipsum posidonium
-                          mediocritatem, explicari dissentiunt cu mea. Repudiare disputationi vim in, mollis iriure nec cu,
-                          alienum argumentum ius ad. Pri eu justo aeque torquatos.</div>
-                      </div>
+                        <div class="headline" style="width: 450px;">Number of loans per province</div>
+                        <div id="loansChart" style="width: 450px; height: 300px;"></div>
                     </v-flex>
                   </v-layout>
                 </v-container>

@@ -97,10 +97,6 @@ google.load("visualization", "1", {
 
 function getLocationFromJson(markerDetailes) {
   $.getJSON("data/future.json", function(data) {
-    //var map = new google.visualization.DataTable();
-    //map.addRows(data.length);
-    //map.addColumn('string', 'Adress');
-    // build the map data, loop over each result
     $.each(data, function(i, v) {
       const marker = {
         latitude: "",

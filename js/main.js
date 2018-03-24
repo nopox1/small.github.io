@@ -8,7 +8,7 @@ var router = new VueRouter({
     {
       path: "/",
       icon: "home",
-      name: "Dashboard",
+      name: "General information",
       component: Dashboard
     },
     {
