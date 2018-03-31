@@ -35,7 +35,7 @@ const FuturpreneurMap = {
         google.maps.event.addListener(marker, "click", function() {
           infowindow.setContent(
             "<div><strong>" +
-              place.name +
+              "<a href="+place. website+" target='_blank'>"+place.name+"</a>" +
               "</strong><br>" +
               "Address: " +
               place.formatted_address +
@@ -112,6 +112,7 @@ function getLocationFromJson(markerDetailes) {
       marker.place_id = v.place_id;
       marker.formatted_address = v.formatted_address;
       marker.name = v.Partners;
+      marker.website = v.WebsiteSupport;
       markerDetailes.push(marker);
     });
   });

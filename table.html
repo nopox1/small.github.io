@@ -26,6 +26,10 @@
       <v-toolbar color="indigo" dark fixed app>
         <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
         <v-toolbar-title>{{ appTitle }}</v-toolbar-title>
+        <v-spacer></v-spacer>
+        <v-btn icon @click.stop="dialog = true">
+          <v-icon>account_circle</v-icon>
+        </v-btn>
       </v-toolbar>
       <v-content>
         <router-view></router-view>
@@ -40,13 +44,26 @@
       <v-stepper-header>
         <v-stepper-step step="1" :complete="e1 > 1">General steps</v-stepper-step>
         <v-divider></v-divider>
-        <v-stepper-step step="2" :complete="e1 > 2">Sole Proprietorships steps</v-stepper-step>
+        <v-stepper-step step="2" :complete="e1 > 2">Select Your Business Structure</v-stepper-step>
         <v-divider></v-divider>
-        <v-stepper-step step="3" :complete="e1 > 3">Partnerships steps</v-stepper-step>
-        <v-divider></v-divider>
-        <v-stepper-step step="4">Corporation steps</v-stepper-step>
+        <v-stepper-step step="3">Selected business structure steps</v-stepper-step>
       </v-stepper-header>
       <v-stepper-items>
+        <v-stepper-content step="2">
+          <v-container fluid>
+            <v-layout row wrap>
+              <v-flex xs12 sm6 md6>
+                <v-radio-group v-model="ex7" column>
+                  <v-radio label="A sole proprietorship" color="red" value="red"></v-radio>
+                  <v-radio label="A partnership" color="red darken-3" value="red darken-3"></v-radio>
+                  <v-radio label="A corporation" color="indigo" value="indigo"></v-radio>
+                </v-radio-group>
+                <v-btn color="primary" @click.native="e1 = 3">Continue</v-btn>
+                <v-btn flat @click.native="e1 = 1">Prev</v-btn>
+              </v-flex>
+            </v-layout>
+          </v-container>
+        </v-stepper-content>
         <v-stepper-content step="1">
           <v-card color="grey lighten-4" class="mb-5" height="400px">
             <ol class="main-step">
@@ -63,34 +80,34 @@
                 <p>Determine Availability of your Business Name - Primarily perform a search through public information sources;
                   you will also need a Nuans report for most provincial and territorial governments.</p>
                 <p class="formore">For more information on a Nuans report please visit:
-                  <a href="https://www.nuans.com/auth/app/scr/corp/nuans/public/PreSearch.html?lang=eng">Order a Nuans report - Nuans</a>
+                  <a href="https://www.nuans.com/auth/app/scr/corp/nuans/public/PreSearch.html?lang=eng" target="_blank">Order a Nuans report - Nuans</a>
                 </p>
               </li>
               <li>
                 <p>Register your Business Name</p>
                 <p class="formore">For more information on Business Name Registration please visit:
-                  <a href="https://www.canada.ca/en/services/business/start/choosing-a-business-name-3.html">Register your name</a>
+                  <a href="https://www.canada.ca/en/services/business/start/choosing-a-business-name-3.html" target="_blank">Register your name</a>
                 </p>
                 <p class="formore required">Every business that has employees needs to register to the Workers Insurance Safety Board (WISB)</p>
                 <p class="forfurther">For further information about WISB and its benefits please visit:
-                  <a href="http://www.wsib.on.ca">The Workplace Safety and Insurance Board</a>
+                  <a href="http://www.wsib.on.ca" target="_blank">The Workplace Safety and Insurance Board</a>
                 </p>
                 <p class="formore requiredmore">Any business that generates more than $30,000.00 in annual taxable sales has to register for HST</p>
                 <p class="forfurther">For further information about HST please visit:
-                  <a href="https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/register-a-gst-hst-account.html">Register for a GST/HST account</a>
+                  <a href="https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/register-a-gst-hst-account.html" target="_blank">Register for a GST/HST account</a>
                 </p>
               </li>
             </ol>
           </v-card>
           <v-btn color="primary" @click.native="e1 = 2">Continue</v-btn>
         </v-stepper-content>
-        <v-stepper-content step="2">
+        <v-stepper-content step="3">
           <v-card color="grey lighten-4" class="mb-5" height="400px">
             <ol class="main-step">
               <li>
                 <p>Register for permits, licenses and taxes</p>
                 <p class="formore">For more information about different Permits and Licenses please visit:
-                  <a href="https://services.bizpal-perle.ca/?b=01">Business Permit and Licence Information</a>
+                  <a href="https://services.bizpal-perle.ca/?b=01" target="_blank">Business Permit and Licence Information</a>
                 </p>
               </li>
               <li>
@@ -111,21 +128,21 @@
               <li>
                 <p>Begin Operations!</p>
                 <p class="formore required">For further information about Partnership agreement please visit:
-                  <a href="https://www.canada.ca/en/revenue-agency/services/tax/businesses/small-businesses-self-employed-income/setting-your-business/   sole-proprietorship.html">SOLE PROPRIETORSHIP</a>
+                  <a href="https://www.canada.ca/en/revenue-agency/services/tax/businesses/small-businesses-self-employed-income/setting-your-business/sole-proprietorship.html" target="_blank">SOLE PROPRIETORSHIP</a>
                 </p>
               </li>
             </ol>
           </v-card>
-          <v-btn color="primary" @click.native="e1 = 3">Continue</v-btn>
-          <v-btn flat  @click.native="e1 = 1">Prev</v-btn>
+          <v-btn color="primary" @click.native="e1 = 4">Continue</v-btn>
+          <v-btn flat @click.native="e1 = 2">Prev</v-btn>
         </v-stepper-content>
-        <v-stepper-content step="3">
+        <v-stepper-content step="4">
           <v-card color="grey lighten-4" class="mb-5" height="400px">
             <ol class="main-step">
               <li>
                 <p>Register for permits, licences, and taxes</p>
                 <p class="formore">For more information about different Permits and Licenses please visit:
-                  <a href="https://services.bizpal-perle.ca/?b=01">Business Permit and Licence Information</a>
+                  <a href="https://services.bizpal-perle.ca/?b=01" target="_blank">Business Permit and Licence Information</a>
                 </p>
               </li>
               <li>
@@ -179,15 +196,15 @@
               <li>
                 <p>Begin Operations!</p>
                 <p class="formore">For further information about Partnership agreement please visit:
-                  <a href="https://www.canada.ca/en/revenue-agency/services/tax/businesses/small-businesses-self-employed-income/setting-your-business/partnership.html">Partnership</a>
+                  <a href="https://www.canada.ca/en/revenue-agency/services/tax/businesses/small-businesses-self-employed-income/setting-your-business/partnership.html" target="_blank">Partnership</a>
                 </p>
               </li>
             </ol>
           </v-card>
-          <v-btn color="primary" @click.native="e1 = 4">Continue</v-btn>
-          <v-btn flat  @click.native="e1 = 2">Prev</v-btn>
+          <v-btn color="primary" @click.native="e1 = 5">Continue</v-btn>
+          <v-btn flat @click.native="e1 = 3">Prev</v-btn>
         </v-stepper-content>
-        <v-stepper-content step="4">
+        <v-stepper-content step="5">
           <v-card color="grey lighten-4" class="mb-5" height="400px">
             <ol class="main-step">
               <li>
@@ -197,14 +214,14 @@
                 <p>Complete articles of Incorporation - Incorporation is a form of business ownership that creates a distinct
                   legal entity separate from its owners (shareholders).</p>
                 <p class="formore">For more information on the steps to complete articles of incorporation please visit:
-                  <a href="https://www.ic.gc.ca/eic/site/cd-dgc.nsf/eng/cs04977.html">Instructions Form 4001 - Articles of Incorporation</a>
+                  <a href="https://www.ic.gc.ca/eic/site/cd-dgc.nsf/eng/cs04977.html" target="_blank">Instructions Form 4001 - Articles of Incorporation</a>
                 </p>
               </li>
               <li>
                 <p>Submit & Register Articles of Incorporation - Canadian legislation requires you to register your corporation
                   in each province and territory in which it will conduct business.</p>
                 <p class="formore">For further information on provincial and territorial registrar websites, please visit:
-                  <a href="https://www.ic.gc.ca/eic/site/cd-dgc.nsf/eng/cs04578.html">Provincial and territorial registrar websites</a>
+                  <a href="https://www.ic.gc.ca/eic/site/cd-dgc.nsf/eng/cs04578.html" target="_blank">Provincial and territorial registrar websites</a>
                 </p>
               </li>
               <li>
@@ -222,16 +239,16 @@
               <li>
                 <p>Begin Operations</p>
                 <p class="formore">For further information about Corporations please visit:
-                  <a href="https://www.ic.gc.ca/eic/site/cd-dgc.nsf/eng/h_cs02193.html">Frequently asked questions</a>
+                  <a href="https://www.ic.gc.ca/eic/site/cd-dgc.nsf/eng/h_cs02193.html" target="_blank">Frequently asked questions</a>
                 </p>
                 <p class="formore required">For further information about Incorporation please visit:
-                  <a href="https://www.ic.gc.ca/eic/site/cd-dgc.nsf/eng/cs06642.html">Steps to incorporating</a>
+                  <a href="https://www.ic.gc.ca/eic/site/cd-dgc.nsf/eng/cs06642.html" target="_blank"> Steps to incorporating</a>
                 </p>
               </li>
             </ol>
           </v-card>
           <v-btn color="primary" @click.native="e1 = 1">Continue</v-btn>
-          <v-btn flat @click.native="e1 = 3">Prev</v-btn>
+          <v-btn flat @click.native="e1 = 4">Prev</v-btn>
         </v-stepper-content>
       </v-stepper-items>
     </v-stepper>
@@ -270,7 +287,7 @@
                 <td class="text-xs-center">{{ props.item.Province }}</td>
                 <td class="text-xs-center">{{ props.item.Partners }}</td>
                 <td class="text-xs-center">
-                  <a v-bind:href="props.item.WebsiteSupport">{{ props.item.WebsiteSupport }}</a>
+                  <a v-bind:href="props.item.WebsiteSupport" target="_blank">{{ props.item.WebsiteSupport }}</a>
                 </td>
                 <td class="text-xs-center">{{ props.item.ZipCodes }}</td>
               </template>
@@ -312,7 +329,7 @@
                 <td class="text-xs-center">{{ props.item.Province }}</td>
                 <td class="text-xs-center">{{ props.item.Relevance }}</td>
                 <td class="text-xs-left">
-                  <a v-bind:href="props.item.WebsiteSupport">{{ props.item.WebsiteSupport }}</a>
+                  <a v-bind:href="props.item.WebsiteSupport" target="_blank">{{ props.item.WebsiteSupport }}</a>
                 </td>
                 <td class="text-xs-right">{{ props.item.Services }}</td>
               </template>
@@ -342,7 +359,7 @@
                 <td class="text-xs-center">{{ props.item.Relevance }}</td>
                 <td class="text-xs-center">{{ props.item.Branch }}</td>
                 <td class="text-xs-left">
-                  <a v-bind:href="props.item.WebsiteSupport">{{ props.item.WebsiteSupport }}</a>
+                  <a v-bind:href="props.item.WebsiteSupport" target="_blank">{{ props.item.WebsiteSupport }}</a>
                 </td>
                 <td class="text-xs-center">{{ props.item.ListofServicesProvided }}</td>
               </template>
@@ -361,21 +378,27 @@
           <v-flex xs4>
             <v-card dark color="grey lighten-4">
               <v-card-text class="text-xs-center black--text bq-title">Total partners</v-card-text>
-              <div class="text-xs-center black--text"><h1>{{total.totalPartners}}</h1></div>
+              <div class="text-xs-center black--text">
+                <h1>{{total.totalPartners}}</h1>
+              </div>
             </v-card>
           </v-flex>
           <v-flex xs4>
-              <v-card dark color="grey lighten-4">
-                <v-card-text class="text-xs-center black--text">Total grants</v-card-text>
-                <div class="text-xs-center black--text"><h1>{{total.totalGrants}}</h1></div>
-              </v-card>
-            </v-flex>
-            <v-flex xs4>
-                <v-card dark color="grey lighten-4">
-                  <v-card-text class="text-xs-center black--text">Total loans</v-card-text>
-                  <div class="text-xs-center black--text"><h1>{{total.totalLoans}}</h1></div>
-                </v-card>
-              </v-flex>
+            <v-card dark color="grey lighten-4">
+              <v-card-text class="text-xs-center black--text">Total grants</v-card-text>
+              <div class="text-xs-center black--text">
+                <h1>{{total.totalGrants}}</h1>
+              </div>
+            </v-card>
+          </v-flex>
+          <v-flex xs4>
+            <v-card dark color="grey lighten-4">
+              <v-card-text class="text-xs-center black--text">Total loans</v-card-text>
+              <div class="text-xs-center black--text">
+                <h1>{{total.totalLoans}}</h1>
+              </div>
+            </v-card>
+          </v-flex>
           <v-flex xs4>
             <v-card color="grey lighten-4" class="black--text">
               <v-container fluid grid-list-lg>
@@ -395,7 +418,7 @@
                     <div>
                       <div class="headline">Community Partners per province</div>
                       <div id="futureChart" style="width: 600px; height: 368px;"></div>
-                      </div>
+                    </div>
                   </v-flex>
                 </v-layout>
               </v-container>
@@ -416,23 +439,23 @@
             </v-card>
           </v-flex>
           <v-flex xs6>
-              <v-card color="grey lighten-4" class="black--text">
-                <v-container fluid grid-list-lg>
-                  <v-layout row>
-                    <v-flex xs6>
-                      <div>
-                        <div class="headline" style="width: 450px;">Number of loans per province</div>
-                        <div id="loansChart" style="width: 450px; height: 300px;"></div>
-                    </v-flex>
-                  </v-layout>
-                </v-container>
-              </v-card>
-            </v-flex>
+            <v-card color="grey lighten-4" class="black--text">
+              <v-container fluid grid-list-lg>
+                <v-layout row>
+                  <v-flex xs6>
+                    <div>
+                      <div class="headline" style="width: 450px;">Number of loans per province</div>
+                      <div id="loansChart" style="width: 450px; height: 300px;"></div>
+                  </v-flex>
+                </v-layout>
+              </v-container>
+            </v-card>
+          </v-flex>
           </v-layout>
           </v-container>
     </v-card>
   </template>
-  <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
   <script src="https://unpkg.com/vuetify/dist/vuetify.min.js"></script>
   <script src="https://unpkg.com/vue-router/dist/vue-router.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -443,6 +466,7 @@
   <script src="https://www.google.com/jsapi"></script>
   <script src="https://www.gstatic.com/charts/loader.js"></script>
   <script src="js/dashboard.js"></script>
+  <script src="js/login.js"></script>
   <script src="js/map_simple.js"></script>
   <script src="js/survey.js"></script>
   <script src="js/table.js"></script>
@@ -460,6 +484,7 @@
       table-layout: fixed;
       word-wrap: break-word;
     }
+
     .main-step {
       padding-left: 100px;
       padding-top: 10px;
@@ -473,6 +498,7 @@
       margin: 0;
       padding: 0 0 0.5em 0em;
     }
+
     ol {
       font-size: 2em;
     }
@@ -490,6 +516,7 @@
       line-height: 0.5em;
       padding-left: 2em;
     }
+
     .formore {
       text-indent: 5rem;
       font-style: normal;
@@ -499,6 +526,7 @@
       color: #231f20;
       line-height: 1em;
     }
+
     .formore:before {
       content: "*";
       color: red;
@@ -513,6 +541,7 @@
       color: #231f20;
       line-height: 1em;
     }
+
     .formore.required:before {
       content: "**";
       color: red;

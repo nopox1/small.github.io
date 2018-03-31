@@ -1,5 +1,6 @@
 var appGlobalTitle = "";
 Vue.component("futurpreneur-map", FuturpreneurMap);
+Vue.component("login", Login);
 
 var router = new VueRouter({
   mode: "hash",
@@ -14,7 +15,7 @@ var router = new VueRouter({
     {
       path: "/survey",
       icon: "format_list_bulleted",
-      name: "Take FREE Self-Assessment Survey",
+      name: "Take a FREE Self-Assessment Survey for your Business Idea",
       component: SurveyPage
     },
     {
@@ -67,16 +68,12 @@ new Vue({
       this.appTitle = this.$route.name;
       console.log(this.appTitle);
     }
+  },
+  created: function() {
+   console.log("Vue created");
+   console.log(this.$refs);
   }
 });
-
-/*router.beforeEach((to, from, next) => {
-			console.log(to);
-			//appGlobalTitle = to.name;
-			console.log(appGlobalTitle);
-			// window.scrollTo(0, 0);
-		    next();
-		});*/
 
 //	Vue.nextTick()
 //  .then(function () {
