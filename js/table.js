@@ -3,7 +3,7 @@ const HowToOpen = {
   data() {
     return {
       e1: 0,
-      ex7: 'red',
+      businessType: 'sole',
       appTitle: "HowToOpen"
     };
   }

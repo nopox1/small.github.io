@@ -49,21 +49,6 @@
         <v-stepper-step step="3">Selected business structure steps</v-stepper-step>
       </v-stepper-header>
       <v-stepper-items>
-        <v-stepper-content step="2">
-          <v-container fluid>
-            <v-layout row wrap>
-              <v-flex xs12 sm6 md6>
-                <v-radio-group v-model="ex7" column>
-                  <v-radio label="A sole proprietorship" color="red" value="red"></v-radio>
-                  <v-radio label="A partnership" color="red darken-3" value="red darken-3"></v-radio>
-                  <v-radio label="A corporation" color="indigo" value="indigo"></v-radio>
-                </v-radio-group>
-                <v-btn color="primary" @click.native="e1 = 3">Continue</v-btn>
-                <v-btn flat @click.native="e1 = 1">Prev</v-btn>
-              </v-flex>
-            </v-layout>
-          </v-container>
-        </v-stepper-content>
         <v-stepper-content step="1">
           <v-card color="grey lighten-4" class="mb-5" height="400px">
             <ol class="main-step">
@@ -101,7 +86,28 @@
           </v-card>
           <v-btn color="primary" @click.native="e1 = 2">Continue</v-btn>
         </v-stepper-content>
-        <v-stepper-content step="3">
+        <v-stepper-content step="2">
+          <v-container fluid>
+            <v-layout row wrap>
+              <v-flex xs12 sm6 md6>
+                  <p>Choose the correct Business Structure:</p>
+                  <ol class="abclatin">
+                 <li><p>Sole Proprietorship - If you are planning to run the business on your own and without involving other individuals as partners.</p></li>
+                 <li><p>Partnership - A partnership occurs when two or more persons are carrying on business.</p></li>
+                 <li><p>Corporation - A corporation is unique in that it is a distinct legal entity separate from that of the people who own its shares.</p></li>
+                </ol>
+                <v-radio-group v-model="businessType" column>
+                  <v-radio label="A sole proprietorship" color="red" value="sole"></v-radio>
+                  <v-radio label="A partnership" color="red darken-3" value="partnership"></v-radio>
+                  <v-radio label="A corporation" color="indigo" value="corporation"></v-radio>
+                </v-radio-group>
+                <v-btn color="primary" @click.native="e1 = 3">Continue</v-btn>
+                <v-btn flat @click.native="e1 = 1">Prev</v-btn>
+              </v-flex>
+            </v-layout>
+          </v-container>
+        </v-stepper-content>
+        <v-stepper-content step="3" v-if="businessType == 'sole'">
           <v-card color="grey lighten-4" class="mb-5" height="400px">
             <ol class="main-step">
               <li>
@@ -133,10 +139,10 @@
               </li>
             </ol>
           </v-card>
-          <v-btn color="primary" @click.native="e1 = 4">Continue</v-btn>
+          <v-btn color="primary" @click.native="e1 = 1">Continue</v-btn>
           <v-btn flat @click.native="e1 = 2">Prev</v-btn>
         </v-stepper-content>
-        <v-stepper-content step="4">
+        <v-stepper-content step="3" v-if="businessType == 'partnership'">
           <v-card color="grey lighten-4" class="mb-5" height="400px">
             <ol class="main-step">
               <li>
@@ -201,10 +207,10 @@
               </li>
             </ol>
           </v-card>
-          <v-btn color="primary" @click.native="e1 = 5">Continue</v-btn>
-          <v-btn flat @click.native="e1 = 3">Prev</v-btn>
+          <v-btn color="primary" @click.native="e1 = 1">Continue</v-btn>
+          <v-btn flat @click.native="e1 = 2">Prev</v-btn>
         </v-stepper-content>
-        <v-stepper-content step="5">
+        <v-stepper-content step="3" v-if="businessType == 'corporation'">
           <v-card color="grey lighten-4" class="mb-5" height="400px">
             <ol class="main-step">
               <li>
@@ -248,7 +254,7 @@
             </ol>
           </v-card>
           <v-btn color="primary" @click.native="e1 = 1">Continue</v-btn>
-          <v-btn flat @click.native="e1 = 4">Prev</v-btn>
+          <v-btn flat @click.native="e1 = 2">Prev</v-btn>
         </v-stepper-content>
       </v-stepper-items>
     </v-stepper>
