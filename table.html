@@ -87,11 +87,9 @@
           <v-btn color="primary" @click.native="e1 = 2">Continue</v-btn>
         </v-stepper-content>
         <v-stepper-content step="2">
-          <v-container fluid>
-            <v-layout row wrap>
-              <v-flex xs12 sm6 md6>
-                  <p>Choose the correct Business Structure:</p>
-                  <ol class="abclatin">
+          <v-card color="grey lighten-4" class="mb-5 pl-5" height="400px">
+                <p>Choose the correct Business Structure:</p>
+                <ol class="abclatin">
                  <li><p>Sole Proprietorship - If you are planning to run the business on your own and without involving other individuals as partners.</p></li>
                  <li><p>Partnership - A partnership occurs when two or more persons are carrying on business.</p></li>
                  <li><p>Corporation - A corporation is unique in that it is a distinct legal entity separate from that of the people who own its shares.</p></li>
@@ -101,11 +99,9 @@
                   <v-radio label="A partnership" color="red darken-3" value="partnership"></v-radio>
                   <v-radio label="A corporation" color="indigo" value="corporation"></v-radio>
                 </v-radio-group>
-                <v-btn color="primary" @click.native="e1 = 3">Continue</v-btn>
-                <v-btn flat @click.native="e1 = 1">Prev</v-btn>
-              </v-flex>
-            </v-layout>
-          </v-container>
+              </v-card>
+              <v-btn color="primary" @click.native="e1 = 3">Continue</v-btn>
+              <v-btn flat @click.native="e1 = 1">Prev</v-btn>
         </v-stepper-content>
         <v-stepper-content step="3" v-if="businessType == 'sole'">
           <v-card color="grey lighten-4" class="mb-5" height="400px">
