@@ -83,13 +83,6 @@ const FuturpreneurList = {
     }
   },
   created: function() {
-    /*this.$http.get("https://www.reddit.com/r/"+ this.name +"/top.json?limit=5")
-		        .then(function(resp){
-		            if(typeof resp.data == 'string') {
-		               resp.data = JSON.parse(resp.data);
-		            }
-		            this.posts=resp.data.data.children;
-		        });*/
     this.getData();
   }
 };

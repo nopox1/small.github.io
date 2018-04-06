@@ -42,12 +42,6 @@ var router = new VueRouter({
       name: "Which Grants/Loans Programs are available?",
       component: GovernmentList
     },
-    /*{
-        path: "/map",
-        icon: "map",
-        name: "Where can i find?",
-        component: FuturpreneurMap
-      }*/
   ]
 });
 

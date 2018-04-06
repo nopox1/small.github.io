@@ -26,19 +26,6 @@ const Dashboard = {
           vm.total.totalPartners = totalPartners;
           future.addColumn("string", "Province, Territory or Region");
           future.addColumn("number", "Partners");
-         // var totalPerProvince = 1;
-          /*$.each(data, function(i, v) {
-            if (i > 0 && i < data.length - 1) {
-              if (v.Province_short == data[i - 1].Province_short) {
-                totalPerProvince++;
-              } else {
-                future.addRow([data[i - 1].Province, totalPerProvince++]);
-                totalPerProvince = 1;
-              }
-            } else if (i > 0) {
-              future.addRow([data[i].Province, ++totalPerProvince]);
-            }
-          });*/
           var totalPartnersArray = {};
           data.forEach(function(v, i) {
               if (!totalPartnersArray[v.Province]) {
@@ -62,7 +49,6 @@ const Dashboard = {
             height: "100%",
             allowHtml: true
           });
-
           /* var options = {
             title: 'Population of Largest U.S. Cities',
             chartArea: {width: '50%'},
@@ -104,10 +90,10 @@ const Dashboard = {
             } else {
               if (!grantsArray[v.Province]) {
                 // Initial object property creation.
-                grantsArray[v.Province] = [i]; // Create an array for that property.
+                grantsArray[v.Province] = [i];
               } else {
                 // Same occurrences found.
-                grantsArray[v.Province].push(i); // Fill the array.
+                grantsArray[v.Province].push(i);
               }
             }
           });
@@ -126,17 +112,6 @@ const Dashboard = {
           );
           grantsChart.draw(grants, null);
 
-          /* var options = {
-            title: 'Population of Largest U.S. Cities',
-            chartArea: {width: '50%'},
-            hAxis: {
-              title: 'Total Population',
-              minValue: 0
-            },
-            vAxis: {
-              title: 'City'
-            }
-          };*/
           var chart = new google.visualization.ColumnChart(
             document.getElementById("loansChart")
           );
@@ -148,20 +123,11 @@ const Dashboard = {
         },
         "json"
       );
-
-      //this.total.totalPartners = totalPartners;
-      //  this.total.totalGrants = totalGrants;
-      //this.total.totalLoans = totalLoans;
       console.log("totalPartners - " + totalPartners);
     }
   },
   created: function() {
     console.log(this.total);
     this.buildDashFromJson();
-  } /*,
-  computed: {
-    totalCounter: function() {
-      return this.total;
-    }
-  }*/
+  }
 };
