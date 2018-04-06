@@ -9,7 +9,7 @@ var router = new VueRouter({
     {
       path: "/",
       icon: "home",
-      name: "General information",
+      name: "Welcome",
       component: Dashboard
     },
     {
@@ -42,6 +42,12 @@ var router = new VueRouter({
       name: "Which Grants/Loans Programs are available?",
       component: GovernmentList
     },
+    {
+      path: "/financials",
+      icon: "monetization_one",
+      name: "Financials",
+      component: Financials
+    }
   ]
 });
 

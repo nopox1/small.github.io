@@ -388,88 +388,14 @@
     </v-container>
   </template>
   <template id="home-template">
-    <v-card>
-      <v-container fluid style="min-height: 0;" grid-list-lg>
-        <v-layout row wrap>
-          <v-flex xs4>
-            <v-card dark color="grey lighten-4">
-              <v-card-text class="text-xs-center black--text bq-title">Total partners</v-card-text>
-              <div class="text-xs-center black--text">
-                <h1>{{total.totalPartners}}</h1>
-              </div>
-            </v-card>
-          </v-flex>
-          <v-flex xs4>
-            <v-card dark color="grey lighten-4">
-              <v-card-text class="text-xs-center black--text">Total grants</v-card-text>
-              <div class="text-xs-center black--text">
-                <h1>{{total.totalGrants}}</h1>
-              </div>
-            </v-card>
-          </v-flex>
-          <v-flex xs4>
-            <v-card dark color="grey lighten-4">
-              <v-card-text class="text-xs-center black--text">Total loans</v-card-text>
-              <div class="text-xs-center black--text">
-                <h1>{{total.totalLoans}}</h1>
-              </div>
-            </v-card>
-          </v-flex>
-          <v-flex xs4>
-            <v-card color="grey lighten-4" class="black--text">
-              <v-container fluid grid-list-lg>
-                <v-layout row>
-                  <v-flex xs7>
-                    <div>
-                      <div id="futureTable" style="width: 300px; height: 400px;"></div>
-                    </div>
-                  </v-flex>
-            </v-card>
-          </v-flex>
-          <v-flex xs8>
-            <v-card color="grey lighten-4" class="black--text">
-              <v-container fluid grid-list-lg>
-                <v-layout row>
-                  <v-flex xs7>
-                    <div>
-                      <div class="headline">Community Partners per province</div>
-                      <div id="futureChart" style="width: 600px; height: 368px;"></div>
-                    </div>
-                  </v-flex>
-                </v-layout>
-              </v-container>
-            </v-card>
-          </v-flex>
-          <v-flex xs6>
-            <v-card color="grey lighten-4" class="black--text">
-              <v-container fluid grid-list-lg>
-                <v-layout row>
-                  <v-flex xs6>
-                    <div>
-                      <div class="headline" style="width: 450px;">Number of grants per province</div>
-                      <div id="grantsChart" style="width: 450px; height: 300px;"></div>
-                    </div>
-                  </v-flex>
-                </v-layout>
-              </v-container>
-            </v-card>
-          </v-flex>
-          <v-flex xs6>
-            <v-card color="grey lighten-4" class="black--text">
-              <v-container fluid grid-list-lg>
-                <v-layout row>
-                  <v-flex xs6>
-                    <div>
-                      <div class="headline" style="width: 450px;">Number of loans per province</div>
-                      <div id="loansChart" style="width: 450px; height: 300px;"></div>
-                  </v-flex>
-                </v-layout>
-              </v-container>
-            </v-card>
+      <v-container fluid fill-height>
+        <v-layout row wrap justify-center align-center>
+          <v-flex text-xs-center>
+             <img src="http://static1.squarespace.com/static/5a8c8cddf43b55ee49c36700/t/5aa693e0e4966bde367b21f5/1522270853816/?format=1500w" alt="small" style="max-width: 200px;"><br/>
+             <h3 class="display-3">Your journey begins here!!!</h3>
           </v-flex>
           </v-layout>
           </v-container>
-    </v-card>
   </template>
   <script src="https://unpkg.com/vue/dist/vue.js"></script>
   <script src="https://unpkg.com/vuetify/dist/vuetify.min.js"></script>

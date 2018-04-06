@@ -196,3 +196,7 @@ const GovernmentList = {
 const NotFoundComponent = {
   template: "<div>Page not found - please check your URL</div>"
 };
+const Financials = {
+  template: "<div>Page not found - please check your URL</div>"
+};
+
