@@ -397,6 +397,59 @@
           </v-layout>
           </v-container>
   </template>
+
+  <template id="financials">
+      <div class="table-container"><div class="aph-table-wrap"><table class="demo-table10">
+          <caption class="title">Financials Options </caption>
+          <thead>
+          <tr>
+          <th>Option 1</th>
+          <th class="space"></th>
+          <th>Option 2</th>
+          <th class="space"></th>
+          <th>Option 3</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>FUTURPRENEUR</td>
+          <td class="space"></td>
+          <td>Centre d'Aide aux Entreprises Haute-Yamaska et région.</td>
+          <td class="space"></td>
+          <td>FONDS MOSAÏQUE</td>
+          </tr>
+          <tr>
+          <td>$15000</td>
+          <td class="space"></td>
+          <td>$50000</td>
+          <td class="space"></td>
+          <td>$25000</td>
+          </tr>
+          <tr>
+          <td>General Expectation								</td>
+          <td class="space"></td>
+          <td>General Expectation								</td>
+          <td class="space"></td>
+          <td>General Expectation								</td>
+          </tr>
+          <tr>
+          <td>Specific Programs								</td>
+          <td class="space"></td>
+          <td>Specific Programs								</td>
+          <td class="space"></td>
+          <td>Specific Programs								</td>
+          </tr>
+          <tr>
+          <td>Eligibility</td>
+          <td class="space"></td>
+          <td>Eligibility</td>
+          <td class="space"></td>
+          <td>Eligibility</td>
+          </tr>
+          </tbody>
+          </table></div></div>
+  </template>
+
   <script src="https://unpkg.com/vue/dist/vue.js"></script>
   <script src="https://unpkg.com/vuetify/dist/vuetify.min.js"></script>
   <script src="https://unpkg.com/vue-router/dist/vue-router.min.js"></script>
@@ -495,6 +548,58 @@
       color: red;
       font-weight: bold;
     }
+
+    /* Table */
+.demo-table10 {
+	border-collapse: collapse;
+	font-size: 14px;
+	min-width: 570px;
+}
+
+.demo-table10 th, 
+.demo-table10 td {
+	padding: 7px 25px;
+	text-align: center;
+}
+.demo-table10 .title {
+	margin-bottom: 12px;
+}
+
+/* Table Header */
+.demo-table10 thead th,
+.demo-table10 thead th:last-child {
+	text-transform: uppercase;
+    color: #545454;
+    font-weight: normal;
+	border-top: 2px solid #99b7ef;
+	border-bottom: 1px solid #99b7ef;
+	background-color: #c9dcff;
+}
+.demo-table10 thead th.space {
+	padding:0;
+	width: 10px;
+	border: 0;
+	background: none;
+}
+
+/* Table Body */
+.demo-table10 tbody td,
+.demo-table10 tbody td:last-child {
+	border-bottom: 1px solid #d9e5f9;
+    color: #484848;
+    background: #ecf3ff !important;
+}
+.demo-table10 tbody td.space {
+	border: 0;
+	padding: 0;
+	background: none !important;
+}
+
+.demo-table10 tbody td:not(.space):hover {
+	background-color: #ffffa2 !important;
+	border-color: #e4e4e4;
+	transition: all .2s;
+}
   </style>
 </body>
 
