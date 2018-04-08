@@ -26,7 +26,7 @@ const FuturpreneurList = {
           filterable: { show: false }
         },
         {
-          text: "Partner",
+          text: "Organization",
           value: "Partners",
           align: "center",
           width: "30%",
